@@ -6,12 +6,11 @@ import type { IPCServer } from './server'
 
 
 export class IPCConnection extends IPCBaseConnection {
-	declare server: IPCServer
 	declare _retries: number
 	// Date.now()
 	declare connectedAt: number
 
-	constructor(socket: Socket, server: any) {
+	constructor(socket: Socket, public server: IPCServer) {
 		super()
 		this.server = server;
 		this.socket = socket;
@@ -19,7 +18,7 @@ export class IPCConnection extends IPCBaseConnection {
 		this.socket.on(IPCNetSocketEvents.CLOSE, this._onClose.bind(this));
 		this.socket.on(IPCNetSocketEvents.DATA, this._init.bind(this));
 		this.socket.on(IPCNetSocketEvents.DRAIN, this._drain.bind(this));
-		this._retries = server.options.retries;
+		this._retries = server.options.retries!;
 	}
 	pause() {
 		this.socket!.pause();

@@ -108,7 +108,6 @@ export class IPCClient extends IPCBaseConnection {
 			socket.on(IPCNetSocketEvents.DATA, () => {
 				const test = socket.read(32);
 				if(!test) { return; }
-				console.log('🚀 ~ IPCClient ~ socket.on ~ test:', test.toString())
 
 				if(test.toString() === "HTTP/1.1 101 Switching Protocols") {
 					const CRLF = Buffer.from("\r\n\r\n")

@@ -18,7 +18,7 @@ export interface IPCServerOptions extends ServerOpts {
   [name: string]: any;
 }
 
-export class IPCServer extends EventEmitter{
+export class IPCServer extends EventEmitter {
   server: net.Server | undefined;
   connections: IPCConnection[] = [];
 
@@ -136,7 +136,7 @@ export class IPCServer extends EventEmitter{
     const timer = setTimeout(() => {
       client.close();
     }, DEFAULT_CONNECTIONTIMEOUT);
-    client.socket!.once(IPCNetSocketEvents.READY, extras => {
+    socket.once(IPCNetSocketEvents.READY, extras => {
       clearTimeout(timer);
       client.connectedAt = Date.now();
       this.connections.push(client);

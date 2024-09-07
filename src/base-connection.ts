@@ -6,7 +6,6 @@ import { ERR_BAD_TIMEOUT, ERR_CONNECTION_CLOSED, ERR_CONNECTION_DESTROYED, IPCNe
 interface PromiseEx<T=any> extends Promise<T> {
   resolve: (value?: T) => void
   reject: (reason?: any) => void
-  packet: Buffer
 }
 
 export interface IPCPacketType {
@@ -25,11 +24,11 @@ export interface IPCPacketType {
 export type IPCPayloadData = any
 
 export interface IPCBaseConnection {
-  _tryWrite(op: IPCMessageType, data?: IPCPayloadData, nonce?: string): Promise<Boolean|Error|void>
-  _parse(packet: IPCPacketType): void
+  // _tryWrite(op: IPCMessageType, data?: IPCPayloadData, nonce?: string): Promise<Boolean|Error|void>
+  // _parse(packet: IPCPacketType): void
 }
 
-export class IPCBaseConnection extends EventEmitter {
+export abstract class IPCBaseConnection extends EventEmitter {
 	declare id: string
   declare _closed: boolean
   declare socket: Socket|undefined
@@ -41,6 +40,9 @@ export class IPCBaseConnection extends EventEmitter {
 
   _requests: any = {}
   _drainQueue: PromiseEx[] = []
+
+  abstract _tryWrite(op: IPCMessageType, data?: IPCPayloadData, nonce?: string): Promise<Boolean|Error|void>
+  abstract _parse(packet: IPCPacketType): void
 
   send(data: IPCPayloadData) {
     return this._tryWrite(IPCMessageType.MESSAGE, data);
@@ -114,7 +116,7 @@ export class IPCBaseConnection extends EventEmitter {
   }
 
   _readToBuffer(socket = this.socket!) {
-    while (socket?.readableLength > 0) {
+    if (socket.readableLength > 0) {
       const chunk = socket.read();
       if (chunk) {
         this._buffer.push(chunk);
@@ -125,24 +127,28 @@ export class IPCBaseConnection extends EventEmitter {
 
   _read() {
     const socket = this.socket!;
-    this._readToBuffer(socket);
-    this._processBuffer(socket);
+    if (socket.readableLength > 1) {
+      this._readToBuffer(socket);
+      this._processBuffer(socket);
+    }
   }
 
   _processBuffer(socket: Socket = this.socket!) {
-    while (this._bufferTotalLength > 1) {
+    do {
       const length = this._untag();
       if (!length) { return; }
-      let data = this._readFromBuffer(length[0] + length[1]);
+      let data = this.readBuffer(length[0] + length[1]);
       if (!data) { return; }
       data = data.subarray(length[0]);
+      const s = data.toString('utf8')
       try {
-        const json = JSON.parse(data.toString('utf8'));
+        const json = JSON.parse(s);
         this._parse(json);
       } catch (e) {
+        console.error('🚀 ~ IPCBaseConnection ~ _processBuffer ~ e:', e, s)
         socket.emit(IPCNetSocketEvents.ERROR, e);
       }
-    }
+    } while (this._bufferTotalLength > 1);
   }
 
   _readFromBuffer(length: number): Buffer | undefined {
@@ -171,10 +177,11 @@ export class IPCBaseConnection extends EventEmitter {
   }
 
   readBuffer(size?: number): Buffer | undefined {
-    if (!size || size > this._bufferTotalLength) {
-      size = this._bufferTotalLength;
+    if (!size) { size = this._bufferTotalLength }
+
+    if (size <= this._bufferTotalLength) {
+      return this._readFromBuffer(size)
     }
-    return this._readFromBuffer(size);
   }
 
   _write(op: IPCMessageType, data?: IPCPayloadData, nonce?: string) {
@@ -199,7 +206,6 @@ export class IPCBaseConnection extends EventEmitter {
       }) as PromiseEx;
       promise.resolve = resolve!;
       promise.reject = reject!;
-      promise.packet = packet;
 
       this._drainQueue.push(promise);
       return promise;
@@ -252,19 +258,13 @@ export class IPCBaseConnection extends EventEmitter {
 
   _drain() {
     const drainQueue = this._drainQueue
-    const socket = this.socket!
     while (drainQueue.length) {
       const promise = drainQueue.shift()!
-      if (socket && socket.writable && promise.packet) {
-        const sent = socket.write(promise.packet)
-        if (sent) {
-          promise.resolve(true)
-        } else {
-          promise.reject(new Error(ERR_DRAIN_WRITE))
-        }
-      } else {
-        promise.resolve()
-      }
+      promise.resolve()
     }
   }
+}
+
+export async function wait(ms: number) {
+  return new Promise(resolve => setTimeout(resolve, ms))
 }
