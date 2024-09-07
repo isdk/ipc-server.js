@@ -12,9 +12,7 @@ export interface IPCPacketType {
   // Message types
   t: IPCMessageType
   // Message data
-  // d.id optional connection id
-  // d.compress optional bool 当connection的时候会发送给client,表明是否支持压缩, 然后客户端的reply会决定是否启用.
-  // d.messagepack optional bool
+  // d.id the connection id
   // d.extras
   d: any
   // Message nonce
