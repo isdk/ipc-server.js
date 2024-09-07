@@ -15,8 +15,8 @@ export class IPCConnection extends IPCBaseConnection {
 		super()
 		this.server = server;
 		this.socket = socket;
-		this.socket.on(IPCNetSocketEvents.ERROR, this._onerror.bind(this));
-		this.socket.on(IPCNetSocketEvents.CLOSE, this._onclose.bind(this));
+		this.socket.on(IPCNetSocketEvents.ERROR, this._onError.bind(this));
+		this.socket.on(IPCNetSocketEvents.CLOSE, this._onClose.bind(this));
 		this.socket.on(IPCNetSocketEvents.DATA, this._init.bind(this));
 		this.socket.on(IPCNetSocketEvents.DRAIN, this._drain.bind(this));
 		this._retries = server.options.retries;
@@ -69,7 +69,7 @@ export class IPCConnection extends IPCBaseConnection {
 			socket.end("HTTP/1.1 404 Not Found");
 		}
 	}
-	_onerror(e: Error) {
+	_onError(e: Error) {
 		this._error = e;
 		if(this.server.listenerCount(IPCEvents.ERROR)) {
 			this.server.emit(IPCEvents.ERROR, e, this);
@@ -78,8 +78,8 @@ export class IPCConnection extends IPCBaseConnection {
 			this.close(ERR_ORPHAN_CONNECTION);
 		}
 	}
-	_onclose() {
-		super._onclose()
+	_onClose() {
+		super._onClose()
 
 		const array = this.server.connections;
 		const index = array.findIndex(c => c.id === this.id);

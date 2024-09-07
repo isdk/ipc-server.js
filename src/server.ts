@@ -49,10 +49,10 @@ export class IPCServer extends EventEmitter{
         return;
       }
       const server = net.createServer(this.options);
-      server.on(IPCNetServerEvents.ERROR, this._onerror.bind(this));
-      server.on(IPCNetServerEvents.CLOSE, this._onclose.bind(this));
-      server.on(IPCNetServerEvents.CONNECTION, this._onconnection.bind(this));
-      server.on(IPCNetServerEvents.LISTENING, this._onlistening.bind(this));
+      server.on(IPCNetServerEvents.ERROR, this._onError.bind(this));
+      server.on(IPCNetServerEvents.CLOSE, this._onClose.bind(this));
+      server.on(IPCNetServerEvents.CONNECTION, this._onConnection.bind(this));
+      server.on(IPCNetServerEvents.LISTENING, this._onListening.bind(this));
       server.once(IPCNetServerEvents.LISTENING, () => resolve(this));
       if (this.options.max) {
         server.maxConnections = this.options.max;
@@ -110,7 +110,7 @@ export class IPCServer extends EventEmitter{
     }
   }
 
-  _onlistening(): void {
+  _onListening(): void {
     let address = this.server?.address();
     if (address && typeof address === "object") {
       address = `${address.address}:${address.port}`;
@@ -118,19 +118,19 @@ export class IPCServer extends EventEmitter{
     this.emit(IPCEvents.READY, address);
   }
 
-  _onerror(e: Error): void {
+  _onError(e: Error): void {
     if (this.listenerCount(IPCEvents.ERROR)) {
       this.emit(IPCEvents.ERROR, e);
     }
   }
 
-  _onclose(): void {
+  _onClose(): void {
     this.server?.removeAllListeners();
     this.server = undefined;
     this.emit(IPCEvents.CLOSE);
   }
 
-  _onconnection(socket: net.Socket): void {
+  _onConnection(socket: net.Socket): void {
     const client = new IPCConnection(socket, this);
     client.id = this.options.idGen ? this.options.idGen() : client._nonce();
     const timer = setTimeout(() => {

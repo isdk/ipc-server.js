@@ -49,26 +49,26 @@ export class IPCClient extends IPCBaseConnection {
 			const options = Object.assign({}, this.options);
 			this.socket = net.connect(options);
 			this.socket.setKeepAlive(true);
-			this.socket.on(IPCNetSocketEvents.ERROR, this._onerror.bind(this));
-			this.socket.on(IPCNetSocketEvents.CLOSE, this._onclose.bind(this));
+			this.socket.on(IPCNetSocketEvents.ERROR, this._onError.bind(this));
+			this.socket.on(IPCNetSocketEvents.CLOSE, this._onClose.bind(this));
 			this.socket.once(IPCNetSocketEvents.READY, this._ready.bind(this));
 		});
 	}
 
-	_onerror(e: Error) {
+	_onError(e: Error) {
 		this._error = e;
 		if(this._events[IPCEvents.ERROR]) {
 			this.emit(IPCEvents.ERROR, e);
 		}
 	}
 
-	_onclose() {
+	_onClose() {
 		this._setStatus(IPCClientStatus.DISCONNECTED);
 		const error = this._error;
 		const end = this._end;
 		const promise = this._promise;
 
-		super._onclose();
+		super._onClose();
 
 		this._error = undefined;
 		this._end = undefined;
@@ -153,7 +153,6 @@ export class IPCClient extends IPCBaseConnection {
 		socket.on(IPCNetSocketEvents.DRAIN, this._drain.bind(this));
 		socket.once(IPCNetSocketEvents.DONE, extras => {
 			this.id = extras.id;
-			console.log('🚀 ~ IPCClient ~ _init ~ done this.id:', this.id)
 			this._setStatus(IPCClientStatus.READY);
 			this._promise.resolve(this);
 			this._promise = null;

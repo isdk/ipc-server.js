@@ -100,7 +100,7 @@ export class IPCBaseConnection extends EventEmitter {
     return true;
   }
 
-	_onclose() {
+	_onClose() {
     const socket = this.socket!
 		this.socket = undefined
 		socket.removeAllListeners()
