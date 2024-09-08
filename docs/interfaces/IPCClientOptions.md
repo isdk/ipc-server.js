@@ -65,7 +65,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/client.ts:14](https://github.com/isdk/ipc-server.js/blob/7e04835296f1f1152164b6258ff63ec1c337a0e2/src/client.ts#L14)
+[packages/ipc-server/src/client.ts:14](https://github.com/isdk/ipc-server.js/blob/a10c4c6790a6635d8eec193e3d6b3e05d6baf9a3/src/client.ts#L14)
 
 ___
 
@@ -75,7 +75,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/client.ts:17](https://github.com/isdk/ipc-server.js/blob/7e04835296f1f1152164b6258ff63ec1c337a0e2/src/client.ts#L17)
+[packages/ipc-server/src/client.ts:17](https://github.com/isdk/ipc-server.js/blob/a10c4c6790a6635d8eec193e3d6b3e05d6baf9a3/src/client.ts#L17)
 
 ___
 
@@ -107,7 +107,7 @@ IpcNetConnectOpts.path
 
 #### Defined in
 
-[packages/ipc-server/src/client.ts:13](https://github.com/isdk/ipc-server.js/blob/7e04835296f1f1152164b6258ff63ec1c337a0e2/src/client.ts#L13)
+[packages/ipc-server/src/client.ts:13](https://github.com/isdk/ipc-server.js/blob/a10c4c6790a6635d8eec193e3d6b3e05d6baf9a3/src/client.ts#L13)
 
 ___
 
@@ -131,7 +131,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/client.ts:15](https://github.com/isdk/ipc-server.js/blob/7e04835296f1f1152164b6258ff63ec1c337a0e2/src/client.ts#L15)
+[packages/ipc-server/src/client.ts:15](https://github.com/isdk/ipc-server.js/blob/a10c4c6790a6635d8eec193e3d6b3e05d6baf9a3/src/client.ts#L15)
 
 ___
 
@@ -141,7 +141,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/client.ts:16](https://github.com/isdk/ipc-server.js/blob/7e04835296f1f1152164b6258ff63ec1c337a0e2/src/client.ts#L16)
+[packages/ipc-server/src/client.ts:16](https://github.com/isdk/ipc-server.js/blob/a10c4c6790a6635d8eec193e3d6b3e05d6baf9a3/src/client.ts#L16)
 
 ___
 

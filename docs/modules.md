@@ -43,7 +43,7 @@
 
 #### Defined in
 
-[packages/ipc-server/src/base-connection.ts:53](https://github.com/isdk/ipc-server.js/blob/7e04835296f1f1152164b6258ff63ec1c337a0e2/src/base-connection.ts#L53)
+[packages/ipc-server/src/base-connection.ts:53](https://github.com/isdk/ipc-server.js/blob/a10c4c6790a6635d8eec193e3d6b3e05d6baf9a3/src/base-connection.ts#L53)
 
 ## Variables
 
@@ -66,7 +66,7 @@
 
 #### Defined in
 
-[packages/ipc-server/src/base-connection.ts:26](https://github.com/isdk/ipc-server.js/blob/7e04835296f1f1152164b6258ff63ec1c337a0e2/src/base-connection.ts#L26)
+[packages/ipc-server/src/base-connection.ts:26](https://github.com/isdk/ipc-server.js/blob/a10c4c6790a6635d8eec193e3d6b3e05d6baf9a3/src/base-connection.ts#L26)
 
 ___
 
@@ -86,7 +86,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/server.ts:11](https://github.com/isdk/ipc-server.js/blob/7e04835296f1f1152164b6258ff63ec1c337a0e2/src/server.ts#L11)
+[packages/ipc-server/src/server.ts:11](https://github.com/isdk/ipc-server.js/blob/a10c4c6790a6635d8eec193e3d6b3e05d6baf9a3/src/server.ts#L11)
 
 ___
 
@@ -107,7 +107,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/base-connection.ts:16](https://github.com/isdk/ipc-server.js/blob/7e04835296f1f1152164b6258ff63ec1c337a0e2/src/base-connection.ts#L16)
+[packages/ipc-server/src/base-connection.ts:16](https://github.com/isdk/ipc-server.js/blob/a10c4c6790a6635d8eec193e3d6b3e05d6baf9a3/src/base-connection.ts#L16)
 
 ## Functions
 
@@ -127,4 +127,4 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/base-connection.ts:305](https://github.com/isdk/ipc-server.js/blob/7e04835296f1f1152164b6258ff63ec1c337a0e2/src/base-connection.ts#L305)
+[packages/ipc-server/src/base-connection.ts:305](https://github.com/isdk/ipc-server.js/blob/a10c4c6790a6635d8eec193e3d6b3e05d6baf9a3/src/base-connection.ts#L305)
