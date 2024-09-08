@@ -1,6 +1,5 @@
-import {IPCClient, IPCServer} from '../src'
+import {IPCClient, IPCClientStatus, IPCServer} from '../src'
 import { wait } from '../src/base-connection';
-import { IPCClientStatus } from '../src/constants';
 
 let timer;
 let svrData: any[] = [];
@@ -16,8 +15,8 @@ describe('IPCClient/Server', async () => {
       if(!received[id]) { received[id] = 0; }
       client.socket.on("data", d => { received[id] += d.toString().length; });
     });
-    server.on("disconnect", c => console.log("disconnected", c.id));
-    server.on("error", e => console.log("Server Error", e));
+    server.on("disconnect", c => console.log("[SOCKET SERVER] disconnected", c.id));
+    server.on("error", e => console.log("[SOCKET SERVER] Server Error", e));
     server.on("message", messageEcho).on("request", requestEcho);
 
     await server.start()
@@ -43,11 +42,35 @@ describe('IPCClient/Server', async () => {
     expect(extra).toHaveProperty('id', client.id)
   })
 
+	it.only('should ping', async() =>{
+		const client = new IPCClient()
+		await client.connect('test1')
+		let p = await client.ping({ping: "pong"}, 10)
+		expect(typeof p).toBe('number')
+		let p1: any[] = await server.ping('pong', 10)
+		expect(p1).toHaveLength(1)
+		expect(p1[0]).toHaveProperty('status', 'fulfilled')
+		expect(typeof p1[0].value).toBe('number')
+		await client.close()
+		p1 = await server.ping('pong', 10)
+		expect(p1).toHaveLength(1)
+		expect(p1[0]).toHaveProperty('status', 'rejected')
+	})
+
   it('should send data by message', async ()=>{
     const client = new IPCClient()
     await client.connect('test1')
 		const count = 999
     const received = await messageTest(client, count)
+		expect(received).toHaveLength(count)
+		expect(svrData).toHaveLength(count)
+  })
+
+  it.only('should request', async ()=>{
+    const client = new IPCClient()
+    await client.connect('test1')
+		const count = 999
+    const received = await requestTest(client, count)
 		expect(received).toHaveLength(count)
 		expect(svrData).toHaveLength(count)
   })
@@ -59,7 +82,7 @@ async function messageTest(client: IPCClient, count = 99) {
 		async function exec() {
 			console.log(`[CLIENT] starting message test`);
 			console.log("[CLIENT] generating random data");
-			const data: any[] = new Array(count).fill(0).map((v, i) => randomObject(10, i));
+			const data: any[] = new Array(count).fill(0).map((_v, i) => randomObject(10, i));
 			console.log("[CLIENT] sending data");
 			client.send({ test: `${data.length} random objects` });
 			let timer = Date.now();
@@ -87,6 +110,29 @@ async function messageTest(client: IPCClient, count = 99) {
 		}
 		return exec();
 	});
+}
+
+async function requestTest(client: IPCClient, count = 100) {
+	console.log(`[CLIENT] starting request test`);
+	console.log("[CLIENT] generating random data");
+	const data = new Array(count).fill(0).map((_v, ix) => randomObject(10, ix));
+	console.log(`[CLIENT] sending ${data.length} requests`);
+	const times: number[] = [];
+	const total = Date.now();
+	const results: any[] = [];
+	for(const d of data) {
+		const time = Date.now();
+		const result = await client.request(d);
+		times.push(Date.now() - time);
+		results.push(result);
+	}
+	console.log(`[CLIENT] finished in ${Date.now() - total}ms, average response time of ${times.reduce((a, b) => a + b, 0) / times.length}ms`);
+	console.log("[CLIENT] verifying data integrity");
+	for(let i = 0; i < data.length; i++) {
+		if(JSON.stringify(data[i]) !== JSON.stringify(results[i])) { throw new Error("invalid data received:"  + JSON.stringify(results[i].id)+' : ' + JSON.stringify(data[i].id)); }
+	}
+	console.log("[CLIENT] no errors found\n");
+	return results
 }
 
 function randomObject(keys, ix: number) {
@@ -121,6 +167,7 @@ async function messageEcho(m, client) {
 }
 
 async function requestEcho(m, reply) {
+	svrData.push(m)
 	await reply(m);
 }
 
