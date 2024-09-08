@@ -21,7 +21,7 @@
 
 #### Defined in
 
-[packages/ipc-server/src/client.ts:24](https://github.com/isdk/ipc-server.js/blob/a10c4c6790a6635d8eec193e3d6b3e05d6baf9a3/src/client.ts#L24)
+[packages/ipc-server/src/client.ts:25](https://github.com/isdk/ipc-server.js/blob/f9c03cdae67c31917ee51825ad932f20a97ede2a/src/client.ts#L25)
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/client.ts:23](https://github.com/isdk/ipc-server.js/blob/a10c4c6790a6635d8eec193e3d6b3e05d6baf9a3/src/client.ts#L23)
+[packages/ipc-server/src/client.ts:24](https://github.com/isdk/ipc-server.js/blob/f9c03cdae67c31917ee51825ad932f20a97ede2a/src/client.ts#L24)
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/client.ts:26](https://github.com/isdk/ipc-server.js/blob/a10c4c6790a6635d8eec193e3d6b3e05d6baf9a3/src/client.ts#L26)
+[packages/ipc-server/src/client.ts:27](https://github.com/isdk/ipc-server.js/blob/f9c03cdae67c31917ee51825ad932f20a97ede2a/src/client.ts#L27)
 
 ___
 
@@ -51,7 +51,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/client.ts:22](https://github.com/isdk/ipc-server.js/blob/a10c4c6790a6635d8eec193e3d6b3e05d6baf9a3/src/client.ts#L22)
+[packages/ipc-server/src/client.ts:23](https://github.com/isdk/ipc-server.js/blob/f9c03cdae67c31917ee51825ad932f20a97ede2a/src/client.ts#L23)
 
 ___
 
@@ -61,7 +61,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/client.ts:25](https://github.com/isdk/ipc-server.js/blob/a10c4c6790a6635d8eec193e3d6b3e05d6baf9a3/src/client.ts#L25)
+[packages/ipc-server/src/client.ts:26](https://github.com/isdk/ipc-server.js/blob/f9c03cdae67c31917ee51825ad932f20a97ede2a/src/client.ts#L26)
 
 ___
 
@@ -71,4 +71,4 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/client.ts:27](https://github.com/isdk/ipc-server.js/blob/a10c4c6790a6635d8eec193e3d6b3e05d6baf9a3/src/client.ts#L27)
+[packages/ipc-server/src/client.ts:28](https://github.com/isdk/ipc-server.js/blob/f9c03cdae67c31917ee51825ad932f20a97ede2a/src/client.ts#L28)

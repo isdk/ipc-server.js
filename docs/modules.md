@@ -7,6 +7,7 @@
 ### Enumerations
 
 - [IPCClientStatus](enums/IPCClientStatus.md)
+- [IPCErrorCode](enums/IPCErrorCode.md)
 - [IPCMessageType](enums/IPCMessageType.md)
 
 ### Classes
@@ -43,7 +44,7 @@
 
 #### Defined in
 
-[packages/ipc-server/src/base-connection.ts:53](https://github.com/isdk/ipc-server.js/blob/a10c4c6790a6635d8eec193e3d6b3e05d6baf9a3/src/base-connection.ts#L53)
+[packages/ipc-server/src/base-connection.ts:58](https://github.com/isdk/ipc-server.js/blob/f9c03cdae67c31917ee51825ad932f20a97ede2a/src/base-connection.ts#L58)
 
 ## Variables
 
@@ -66,7 +67,7 @@
 
 #### Defined in
 
-[packages/ipc-server/src/base-connection.ts:26](https://github.com/isdk/ipc-server.js/blob/a10c4c6790a6635d8eec193e3d6b3e05d6baf9a3/src/base-connection.ts#L26)
+[packages/ipc-server/src/base-connection.ts:31](https://github.com/isdk/ipc-server.js/blob/f9c03cdae67c31917ee51825ad932f20a97ede2a/src/base-connection.ts#L31)
 
 ___
 
@@ -86,7 +87,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/server.ts:11](https://github.com/isdk/ipc-server.js/blob/a10c4c6790a6635d8eec193e3d6b3e05d6baf9a3/src/server.ts#L11)
+[packages/ipc-server/src/server.ts:11](https://github.com/isdk/ipc-server.js/blob/f9c03cdae67c31917ee51825ad932f20a97ede2a/src/server.ts#L11)
 
 ___
 
@@ -107,7 +108,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/base-connection.ts:16](https://github.com/isdk/ipc-server.js/blob/a10c4c6790a6635d8eec193e3d6b3e05d6baf9a3/src/base-connection.ts#L16)
+[packages/ipc-server/src/base-connection.ts:21](https://github.com/isdk/ipc-server.js/blob/f9c03cdae67c31917ee51825ad932f20a97ede2a/src/base-connection.ts#L21)
 
 ## Functions
 
@@ -127,4 +128,4 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/base-connection.ts:305](https://github.com/isdk/ipc-server.js/blob/a10c4c6790a6635d8eec193e3d6b3e05d6baf9a3/src/base-connection.ts#L305)
+[packages/ipc-server/src/base-connection.ts:312](https://github.com/isdk/ipc-server.js/blob/f9c03cdae67c31917ee51825ad932f20a97ede2a/src/base-connection.ts#L312)

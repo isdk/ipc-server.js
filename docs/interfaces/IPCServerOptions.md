@@ -49,7 +49,7 @@ ServerOpts.allowHalfOpen
 
 #### Defined in
 
-node_modules/.pnpm/@types+node@22.3.0/node_modules/@types/node/net.d.ts:510
+node_modules/.pnpm/@types+node@20.14.9/node_modules/@types/node/net.d.ts:510
 
 ___
 
@@ -59,7 +59,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/server.ts:26](https://github.com/isdk/ipc-server.js/blob/a10c4c6790a6635d8eec193e3d6b3e05d6baf9a3/src/server.ts#L26)
+[packages/ipc-server/src/server.ts:26](https://github.com/isdk/ipc-server.js/blob/f9c03cdae67c31917ee51825ad932f20a97ede2a/src/server.ts#L26)
 
 ___
 
@@ -86,7 +86,7 @@ ServerOpts.keepAlive
 
 #### Defined in
 
-node_modules/.pnpm/@types+node@22.3.0/node_modules/@types/node/net.d.ts:528
+node_modules/.pnpm/@types+node@20.14.9/node_modules/@types/node/net.d.ts:528
 
 ___
 
@@ -112,7 +112,7 @@ ServerOpts.keepAliveInitialDelay
 
 #### Defined in
 
-node_modules/.pnpm/@types+node@22.3.0/node_modules/@types/node/net.d.ts:534
+node_modules/.pnpm/@types+node@20.14.9/node_modules/@types/node/net.d.ts:534
 
 ___
 
@@ -122,7 +122,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/server.ts:25](https://github.com/isdk/ipc-server.js/blob/a10c4c6790a6635d8eec193e3d6b3e05d6baf9a3/src/server.ts#L25)
+[packages/ipc-server/src/server.ts:25](https://github.com/isdk/ipc-server.js/blob/f9c03cdae67c31917ee51825ad932f20a97ede2a/src/server.ts#L25)
 
 ___
 
@@ -132,7 +132,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/server.ts:23](https://github.com/isdk/ipc-server.js/blob/a10c4c6790a6635d8eec193e3d6b3e05d6baf9a3/src/server.ts#L23)
+[packages/ipc-server/src/server.ts:23](https://github.com/isdk/ipc-server.js/blob/f9c03cdae67c31917ee51825ad932f20a97ede2a/src/server.ts#L23)
 
 ___
 
@@ -158,7 +158,7 @@ ServerOpts.noDelay
 
 #### Defined in
 
-node_modules/.pnpm/@types+node@22.3.0/node_modules/@types/node/net.d.ts:521
+node_modules/.pnpm/@types+node@20.14.9/node_modules/@types/node/net.d.ts:521
 
 ___
 
@@ -168,7 +168,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/server.ts:20](https://github.com/isdk/ipc-server.js/blob/a10c4c6790a6635d8eec193e3d6b3e05d6baf9a3/src/server.ts#L20)
+[packages/ipc-server/src/server.ts:20](https://github.com/isdk/ipc-server.js/blob/f9c03cdae67c31917ee51825ad932f20a97ede2a/src/server.ts#L20)
 
 ___
 
@@ -190,7 +190,7 @@ ServerOpts.pauseOnConnect
 
 #### Defined in
 
-node_modules/.pnpm/@types+node@22.3.0/node_modules/@types/node/net.d.ts:515
+node_modules/.pnpm/@types+node@20.14.9/node_modules/@types/node/net.d.ts:515
 
 ___
 
@@ -200,7 +200,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/server.ts:21](https://github.com/isdk/ipc-server.js/blob/a10c4c6790a6635d8eec193e3d6b3e05d6baf9a3/src/server.ts#L21)
+[packages/ipc-server/src/server.ts:21](https://github.com/isdk/ipc-server.js/blob/f9c03cdae67c31917ee51825ad932f20a97ede2a/src/server.ts#L21)
 
 ___
 
@@ -210,7 +210,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/server.ts:24](https://github.com/isdk/ipc-server.js/blob/a10c4c6790a6635d8eec193e3d6b3e05d6baf9a3/src/server.ts#L24)
+[packages/ipc-server/src/server.ts:24](https://github.com/isdk/ipc-server.js/blob/f9c03cdae67c31917ee51825ad932f20a97ede2a/src/server.ts#L24)
 
 ___
 
@@ -220,4 +220,4 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/server.ts:22](https://github.com/isdk/ipc-server.js/blob/a10c4c6790a6635d8eec193e3d6b3e05d6baf9a3/src/server.ts#L22)
+[packages/ipc-server/src/server.ts:22](https://github.com/isdk/ipc-server.js/blob/f9c03cdae67c31917ee51825ad932f20a97ede2a/src/server.ts#L22)

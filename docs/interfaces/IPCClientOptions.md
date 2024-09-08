@@ -41,7 +41,7 @@ IpcNetConnectOpts.allowHalfOpen
 
 #### Defined in
 
-node_modules/.pnpm/@types+node@22.3.0/node_modules/@types/node/net.d.ts:31
+node_modules/.pnpm/@types+node@20.14.9/node_modules/@types/node/net.d.ts:31
 
 ___
 
@@ -55,7 +55,7 @@ IpcNetConnectOpts.fd
 
 #### Defined in
 
-node_modules/.pnpm/@types+node@22.3.0/node_modules/@types/node/net.d.ts:30
+node_modules/.pnpm/@types+node@20.14.9/node_modules/@types/node/net.d.ts:30
 
 ___
 
@@ -65,7 +65,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/client.ts:14](https://github.com/isdk/ipc-server.js/blob/a10c4c6790a6635d8eec193e3d6b3e05d6baf9a3/src/client.ts#L14)
+[packages/ipc-server/src/client.ts:15](https://github.com/isdk/ipc-server.js/blob/f9c03cdae67c31917ee51825ad932f20a97ede2a/src/client.ts#L15)
 
 ___
 
@@ -75,7 +75,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/client.ts:17](https://github.com/isdk/ipc-server.js/blob/a10c4c6790a6635d8eec193e3d6b3e05d6baf9a3/src/client.ts#L17)
+[packages/ipc-server/src/client.ts:18](https://github.com/isdk/ipc-server.js/blob/f9c03cdae67c31917ee51825ad932f20a97ede2a/src/client.ts#L18)
 
 ___
 
@@ -93,7 +93,7 @@ IpcNetConnectOpts.onread
 
 #### Defined in
 
-node_modules/.pnpm/@types+node@22.3.0/node_modules/@types/node/net.d.ts:51
+node_modules/.pnpm/@types+node@20.14.9/node_modules/@types/node/net.d.ts:51
 
 ___
 
@@ -107,7 +107,7 @@ IpcNetConnectOpts.path
 
 #### Defined in
 
-[packages/ipc-server/src/client.ts:13](https://github.com/isdk/ipc-server.js/blob/a10c4c6790a6635d8eec193e3d6b3e05d6baf9a3/src/client.ts#L13)
+[packages/ipc-server/src/client.ts:14](https://github.com/isdk/ipc-server.js/blob/f9c03cdae67c31917ee51825ad932f20a97ede2a/src/client.ts#L14)
 
 ___
 
@@ -121,7 +121,7 @@ IpcNetConnectOpts.readable
 
 #### Defined in
 
-node_modules/.pnpm/@types+node@22.3.0/node_modules/@types/node/net.d.ts:32
+node_modules/.pnpm/@types+node@20.14.9/node_modules/@types/node/net.d.ts:32
 
 ___
 
@@ -131,7 +131,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/client.ts:15](https://github.com/isdk/ipc-server.js/blob/a10c4c6790a6635d8eec193e3d6b3e05d6baf9a3/src/client.ts#L15)
+[packages/ipc-server/src/client.ts:16](https://github.com/isdk/ipc-server.js/blob/f9c03cdae67c31917ee51825ad932f20a97ede2a/src/client.ts#L16)
 
 ___
 
@@ -141,7 +141,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/client.ts:16](https://github.com/isdk/ipc-server.js/blob/a10c4c6790a6635d8eec193e3d6b3e05d6baf9a3/src/client.ts#L16)
+[packages/ipc-server/src/client.ts:17](https://github.com/isdk/ipc-server.js/blob/f9c03cdae67c31917ee51825ad932f20a97ede2a/src/client.ts#L17)
 
 ___
 
@@ -155,7 +155,7 @@ IpcNetConnectOpts.signal
 
 #### Defined in
 
-node_modules/.pnpm/@types+node@22.3.0/node_modules/@types/node/net.d.ts:34
+node_modules/.pnpm/@types+node@20.14.9/node_modules/@types/node/net.d.ts:34
 
 ___
 
@@ -169,7 +169,7 @@ IpcNetConnectOpts.timeout
 
 #### Defined in
 
-node_modules/.pnpm/@types+node@22.3.0/node_modules/@types/node/net.d.ts:791
+node_modules/.pnpm/@types+node@20.14.9/node_modules/@types/node/net.d.ts:791
 
 ___
 
@@ -183,4 +183,4 @@ IpcNetConnectOpts.writable
 
 #### Defined in
 
-node_modules/.pnpm/@types+node@22.3.0/node_modules/@types/node/net.d.ts:33
+node_modules/.pnpm/@types+node@20.14.9/node_modules/@types/node/net.d.ts:33
