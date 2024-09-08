@@ -1,7 +1,7 @@
 import { Socket } from "net";
 import { Buffer } from "buffer";
-import { IPCBaseConnection, IPCPacketType, IPCPayloadData } from "./base-connection";
-import { ERR_CONNECTION_CLOSED, IPCNetSocketEvents, DEFAULT_PATH, ERR_PREMATURE_PACKET, IPCEvents, IPCMessageType, ERR_ORPHAN_CONNECTION, DEFAULT_RETRY_INCREMENT } from "./constants";
+import { IPCBaseConnection, IPCEvents, IPCPacketType, IPCPayloadData, IPCNetSocketEvents, IPCMessageType } from "./base-connection";
+import { ERR_CONNECTION_CLOSED, DEFAULT_PATH, ERR_PREMATURE_PACKET, ERR_ORPHAN_CONNECTION, DEFAULT_RETRY_INCREMENT } from "./constants";
 import type { IPCServer } from './server'
 
 

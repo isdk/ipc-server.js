@@ -1,7 +1,38 @@
 import { Socket } from 'net'
 import { EventEmitter } from 'events-ex'
 
-import { ERR_BAD_TIMEOUT, ERR_CONNECTION_CLOSED, ERR_CONNECTION_DESTROYED, IPCNetSocketEvents, DEFAULT_TIMEOUT, IPCMessageType, ERR_TIMEOUT, ERR_DRAIN_WRITE } from './constants'
+import { ERR_BAD_TIMEOUT, ERR_CONNECTION_CLOSED, ERR_CONNECTION_DESTROYED, DEFAULT_TIMEOUT, ERR_TIMEOUT } from './constants'
+
+export enum IPCMessageType {
+  CONNECTION,
+  MESSAGE,
+  REQUEST,
+  RESPONSE,
+  PING,
+  PONG,
+  END,
+}
+
+export const IPCNetSocketEvents = {
+  ERROR: "error",
+  CLOSE: "close",
+  DATA: "readable",
+  READY: "ready",
+  DRAIN: "drain",
+  // user-defined
+  DONE: "done",
+}
+
+export const IPCEvents = {
+  READY: "ready",
+  ERROR: "error",
+  STATUS: "status",
+  CONNECT: "connect",
+  DISCONNECT: "disconnect",
+  MESSAGE: "message",
+  REQUEST: "request",
+  CLOSE: "close"
+}
 
 interface PromiseEx<T=any> extends Promise<T> {
   resolve: (value?: T) => void
@@ -30,7 +61,7 @@ export abstract class IPCBaseConnection extends EventEmitter {
 	declare id: string
   declare _closed: boolean
   declare socket: Socket|undefined
-	declare _error: any
+	declare _error: Error|undefined
 	declare _end: any
 
   _buffer: Buffer[] = []; // internal buffer for readable data
@@ -46,25 +77,33 @@ export abstract class IPCBaseConnection extends EventEmitter {
     return this._tryWrite(IPCMessageType.MESSAGE, data);
   }
 
-  request(data: IPCPayloadData, timeout = DEFAULT_TIMEOUT) {
-    if (!Number.isInteger(timeout)) { return Promise.reject(ERR_BAD_TIMEOUT); }
-    return new Promise((ok, nope) => {
+  sendByType(op: IPCMessageType, data?: IPCPayloadData, timeout = DEFAULT_TIMEOUT) {
+    if (!Number.isInteger(timeout)) { return Promise.reject(new Error(ERR_BAD_TIMEOUT)); }
+    return new Promise((resolve, reject) => {
       const nonce = this._nonce();
       this._requests[nonce] = {
-        resolve: ok,
-        reject: nope,
+        resolve,
+        reject,
         date: Date.now(),
         timer: timeout > 0 ? setTimeout(() => {
           delete this._requests[nonce];
-          nope(ERR_TIMEOUT);
+          reject(new Error(ERR_TIMEOUT));
         }, timeout) : undefined
       };
-      this._tryWrite(IPCMessageType.REQUEST, data, nonce).catch(e => {
+      this._tryWrite(op, data, nonce).catch(e => {
         if (this._requests[nonce].timer) { clearTimeout(this._requests[nonce].timer); }
         delete this._requests[nonce];
-        nope(e);
+        reject(e);
       });
     });
+  }
+
+  request(data?: IPCPayloadData, timeout = DEFAULT_TIMEOUT) {
+    return this.sendByType(IPCMessageType.REQUEST, data, timeout)
+  }
+
+  ping(data?: IPCPayloadData, timeout = DEFAULT_TIMEOUT) {
+    return this.sendByType(IPCMessageType.PING, data, timeout)
   }
 
   async close(data?: any, allowReconnect = false) {
@@ -134,9 +173,9 @@ export abstract class IPCBaseConnection extends EventEmitter {
   _processBuffer(socket: Socket = this.socket!) {
     do {
       const length = this._untag();
-      if (!length) { return; }
+      if (!length) { return }
       let data = this.readBuffer(length[0] + length[1]);
-      if (!data) { return; }
+      if (!data) { return }
       data = data.subarray(length[0]);
       const s = data.toString('utf8')
       try {
@@ -146,7 +185,7 @@ export abstract class IPCBaseConnection extends EventEmitter {
         console.error('🚀 ~ IPCBaseConnection ~ _processBuffer ~ e:', e, s)
         socket.emit(IPCNetSocketEvents.ERROR, e);
       }
-    } while (this._bufferTotalLength > 1);
+    } while (this._bufferTotalLength > 0);
   }
 
   _readFromBuffer(length: number): Buffer | undefined {

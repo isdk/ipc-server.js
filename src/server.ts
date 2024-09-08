@@ -3,9 +3,18 @@ import { unlinkSync, statSync } from "fs";
 import { EventEmitter } from "events-ex";
 
 import { IPCConnection } from "./connection";
-import { ERR_BAD_TIMEOUT, IPCNetSocketEvents, DEFAULT_CONNECTIONTIMEOUT, DEFAULT_PATH, DEFAULT_RETRIES, DEFAULT_TIMEOUT, ERR_ADDRINUSE, ERR_SERVER_CLOSED, ERR_SERVER_EXISTS, IPCEvents, IPCNetServerEvents } from "./constants";
+import { ERR_BAD_TIMEOUT, DEFAULT_CONNECTION_TIMEOUT, DEFAULT_PATH, DEFAULT_RETRIES, DEFAULT_TIMEOUT, ERR_ADDRINUSE, ERR_SERVER_CLOSED, ERR_SERVER_EXISTS, } from "./constants";
+import { IPCEvents, IPCNetSocketEvents, IPCPayloadData } from "./base-connection";
 
 type GenIdFunc = () => string;
+
+export const IPCNetServerEvents = {
+  ERROR: "error",
+  CONNECTION: "connection",
+  SECURECONNECTION: "secureConnection",
+  LISTENING: "listening",
+  CLOSE: "close"
+}
 
 export interface IPCServerOptions extends ServerOpts {
   path?: string;
@@ -81,21 +90,21 @@ export class IPCServer extends EventEmitter {
     return this;
   }
 
-  async broadcast(data: any): Promise<void> {
+  async broadcast(data: IPCPayloadData): Promise<void> {
     for (const c of this.connections) {
       await c.send(data).catch(e => this.emit(IPCEvents.ERROR, e));
     }
   }
 
-  survey(data: any, timeout = DEFAULT_TIMEOUT): Promise<any[]> {
+  survey(data?: IPCPayloadData, timeout = DEFAULT_TIMEOUT): Promise<any[]> {
     if (!Number.isInteger(timeout)) {
       return Promise.reject(ERR_BAD_TIMEOUT);
     }
     return Promise.allSettled(this.connections.map(c => c.request(data, timeout)));
   }
 
-  ping(data: any, timeout = DEFAULT_TIMEOUT): Promise<any[]> {
-    return Promise.allSettled(this.connections.map(c => c.request(data, timeout)));
+  ping(data?: IPCPayloadData, timeout = DEFAULT_TIMEOUT) {
+    return Promise.allSettled(this.connections.map(c => c.ping(data, timeout) as Promise<number>));
   }
 
   pause(): void {
@@ -135,7 +144,7 @@ export class IPCServer extends EventEmitter {
     client.id = this.options.idGen ? this.options.idGen() : client._nonce();
     const timer = setTimeout(() => {
       client.close();
-    }, DEFAULT_CONNECTIONTIMEOUT);
+    }, DEFAULT_CONNECTION_TIMEOUT);
     socket.once(IPCNetSocketEvents.READY, extras => {
       clearTimeout(timer);
       client.connectedAt = Date.now();

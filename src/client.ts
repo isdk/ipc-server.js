@@ -1,11 +1,31 @@
 import net from "net";
+import type {IpcNetConnectOpts} from "net";
 
-import { IPCBaseConnection, IPCPacketType, IPCPayloadData } from "./base-connection.js";
+import { IPCBaseConnection, IPCEvents, IPCPacketType, IPCPayloadData, IPCNetSocketEvents, IPCMessageType, } from "./base-connection.js";
 import {
-	IPCNetSocketEvents, IPCEvents, IPCClientStatus, DEFAULT_MAXRETRYTIME, DEFAULT_PATH, DEFAULT_RETRIES, IPCMessageType, IPCClientOptions, DEFAULT_RETRY_INCREMENT,
+	DEFAULT_MAX_RETRY_TIME, DEFAULT_PATH, DEFAULT_RETRIES, DEFAULT_RETRY_INCREMENT,
 	ERR_CONNECTION_CLOSED, ERR_UNKNOWN, ERR_NOT_IDLE, ERR_NOT_READY, ERR_BAD_PATH,
 } from "./constants.js";
 
+
+export interface IPCClientOptions extends IpcNetConnectOpts {
+	// Path to the socket
+	path: string;
+	handshake?: boolean;
+	reconnect?: boolean;
+	retries?: number;
+	maxRetryTime?: number;
+	[name: string]: any
+}
+
+export enum IPCClientStatus {
+	IDLE,
+	CONNECTING,
+	CONNECTED,
+	READY,
+	DISCONNECTED,
+	RECONNECTING,
+}
 
 export class IPCClient extends IPCBaseConnection {
 	declare status: IPCClientStatus
@@ -20,7 +40,7 @@ export class IPCClient extends IPCBaseConnection {
 
 		if (options.reconnect === undefined) { options.reconnect = true }
 		if (!(options.retries! > 0)) { options.retries = DEFAULT_RETRIES }
-		if (!(options.maxRetryTime! >= DEFAULT_RETRY_INCREMENT)) { options.maxRetryTime = DEFAULT_MAXRETRYTIME }
+		if (!(options.maxRetryTime! >= DEFAULT_RETRY_INCREMENT)) { options.maxRetryTime = DEFAULT_MAX_RETRY_TIME }
 
 		this._retries = 0;
 
@@ -31,7 +51,7 @@ export class IPCClient extends IPCBaseConnection {
 		}
 	}
 
-	connect(data: IPCPayloadData) {
+	connect(data?: IPCPayloadData) {
 		return new Promise((ok, nope) => {
 			if(this.status !== IPCClientStatus.IDLE) {
 				nope(new Error(ERR_NOT_IDLE));
@@ -82,7 +102,7 @@ export class IPCClient extends IPCBaseConnection {
 				if(exceeded) {
 					if(promise) {
 						this._retries = 0;
-						promise.reject(error || ERR_UNKNOWN);
+						promise.reject(error || new Error(ERR_UNKNOWN));
 					} else {
 						this.emit(IPCEvents.CLOSE, end || error);
 					}
@@ -132,8 +152,9 @@ export class IPCClient extends IPCBaseConnection {
 						}
 					} while(currentBuffer = this._buffer[++currentBufferIndex]);
 				} else {
-					const str = test.toString();
-					this._error = str.slice(0, str.indexOf("\r\n"));
+					let str = test.toString();
+					str = str.slice(0, str.indexOf("\r\n"))
+					this._error = new Error(str);
 					socket.destroy();
 				}
 			});
