@@ -33,6 +33,7 @@
     "release.alpha": "pnpm run release -- --prerelease alpha"
   },
   "dependencies": {
+    "@isdk/common-error": "^0.1.1",
     "events-ex": "^2.0.0"
   },
   "devDependencies": {

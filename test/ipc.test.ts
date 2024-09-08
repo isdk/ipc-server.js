@@ -42,19 +42,25 @@ describe('IPCClient/Server', async () => {
     expect(extra).toHaveProperty('id', client.id)
   })
 
-	it.only('should ping', async() =>{
+	it('should ping', async() =>{
 		const client = new IPCClient()
 		await client.connect('test1')
 		let p = await client.ping({ping: "pong"}, 10)
 		expect(typeof p).toBe('number')
 		let p1: any[] = await server.ping('pong', 10)
-		expect(p1).toHaveLength(1)
-		expect(p1[0]).toHaveProperty('status', 'fulfilled')
-		expect(typeof p1[0].value).toBe('number')
+		expect(p1.length).toBeGreaterThanOrEqual(1)
+		let v = getClientPingValue(p1)
+		expect(v).toHaveProperty('status', 'fulfilled')
+		expect(typeof v.value.ping).toBe('number')
 		await client.close()
 		p1 = await server.ping('pong', 10)
-		expect(p1).toHaveLength(1)
-		expect(p1[0]).toHaveProperty('status', 'rejected')
+		expect(p1.length).toBeGreaterThanOrEqual(1)
+		v = getClientPingValue(p1)
+		expect(v).toHaveProperty('status', 'rejected')
+
+		function getClientPingValue(p1: any[]) {
+			return p1.find(p => p.value?.id === client.id || p.reason?.data.id === client.id)
+		}
 	})
 
   it('should send data by message', async ()=>{
@@ -66,7 +72,7 @@ describe('IPCClient/Server', async () => {
 		expect(svrData).toHaveLength(count)
   })
 
-  it.only('should request', async ()=>{
+  it('should request', async ()=>{
     const client = new IPCClient()
     await client.connect('test1')
 		const count = 999

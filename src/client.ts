@@ -6,6 +6,7 @@ import {
 	DEFAULT_MAX_RETRY_TIME, DEFAULT_PATH, DEFAULT_RETRIES, DEFAULT_RETRY_INCREMENT,
 	ERR_CONNECTION_CLOSED, ERR_UNKNOWN, ERR_NOT_IDLE, ERR_NOT_READY, ERR_BAD_PATH,
 } from "./constants.js";
+import { CommonError, ErrorCode } from "@isdk/common-error";
 
 
 export interface IPCClientOptions extends IpcNetConnectOpts {
@@ -52,17 +53,17 @@ export class IPCClient extends IPCBaseConnection {
 	}
 
 	connect(data?: IPCPayloadData) {
-		return new Promise((ok, nope) => {
+		return new Promise((resolve, reject) => {
 			if(this.status !== IPCClientStatus.IDLE) {
-				nope(new Error(ERR_NOT_IDLE));
+				reject(new Error(ERR_NOT_IDLE));
 				return;
 			}
 			if(this._closed) {
 				this._closed = false;
 			}
 			this._promise = {
-				resolve: ok,
-				reject: nope
+				resolve,
+				reject,
 			};
 			this._payload = data;
 			this._setStatus(IPCClientStatus.CONNECTING);
@@ -102,7 +103,7 @@ export class IPCClient extends IPCBaseConnection {
 				if(exceeded) {
 					if(promise) {
 						this._retries = 0;
-						promise.reject(error || new Error(ERR_UNKNOWN));
+						promise.reject(error || new CommonError(ERR_UNKNOWN, 'Reconnecting', ErrorCode.TooManyRequests));
 					} else {
 						this.emit(IPCEvents.CLOSE, end || error);
 					}

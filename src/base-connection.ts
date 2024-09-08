@@ -2,6 +2,11 @@ import { Socket } from 'net'
 import { EventEmitter } from 'events-ex'
 
 import { ERR_BAD_TIMEOUT, ERR_CONNECTION_CLOSED, ERR_CONNECTION_DESTROYED, DEFAULT_TIMEOUT, ERR_TIMEOUT } from './constants'
+import { CommonError, ErrorCode } from '@isdk/common-error'
+
+export enum IPCErrorCode {
+  ConnectionDestroyed = 498
+}
 
 export enum IPCMessageType {
   CONNECTION,
@@ -78,7 +83,9 @@ export abstract class IPCBaseConnection extends EventEmitter {
   }
 
   sendByType(op: IPCMessageType, data?: IPCPayloadData, timeout = DEFAULT_TIMEOUT) {
-    if (!Number.isInteger(timeout)) { return Promise.reject(new Error(ERR_BAD_TIMEOUT)); }
+    if (!Number.isInteger(timeout)) {
+      return Promise.reject(new CommonError(ERR_BAD_TIMEOUT, {data: {id: this.id, op}}, ErrorCode.InvalidArgument));
+    }
     return new Promise((resolve, reject) => {
       const nonce = this._nonce();
       this._requests[nonce] = {
@@ -87,12 +94,13 @@ export abstract class IPCBaseConnection extends EventEmitter {
         date: Date.now(),
         timer: timeout > 0 ? setTimeout(() => {
           delete this._requests[nonce];
-          reject(new Error(ERR_TIMEOUT));
+          reject(new CommonError(ERR_TIMEOUT, {data: {id: this.id, op}}, ErrorCode.RequestTimeout));
         }, timeout) : undefined
       };
       this._tryWrite(op, data, nonce).catch(e => {
         if (this._requests[nonce].timer) { clearTimeout(this._requests[nonce].timer); }
         delete this._requests[nonce];
+        e.data = {id: this.id, op};
         reject(e);
       });
     });
@@ -130,10 +138,10 @@ export abstract class IPCBaseConnection extends EventEmitter {
     this._closed = true;
     const drainQueue = this._drainQueue
     for (let i = 0; i < drainQueue.length; i++) {
-      drainQueue.shift()!.reject(new Error(ERR_CONNECTION_DESTROYED));
+      drainQueue.shift()!.reject(new CommonError(ERR_CONNECTION_DESTROYED, {data: {reason, id: this.id}}, IPCErrorCode.ConnectionDestroyed));
     }
     if (typeof reason === "string") {
-      reason = new Error(reason);
+      reason = new CommonError(reason, 'connection.destroyed', IPCErrorCode.ConnectionDestroyed);
     }
     this.socket.destroy(reason);
     return true;
@@ -182,7 +190,6 @@ export abstract class IPCBaseConnection extends EventEmitter {
         const json = JSON.parse(s);
         this._parse(json);
       } catch (e) {
-        console.error('🚀 ~ IPCBaseConnection ~ _processBuffer ~ e:', e, s)
         socket.emit(IPCNetSocketEvents.ERROR, e);
       }
     } while (this._bufferTotalLength > 0);
@@ -224,7 +231,7 @@ export abstract class IPCBaseConnection extends EventEmitter {
   _write(op: IPCMessageType, data?: IPCPayloadData, nonce?: string) {
     const socket = this.socket
     if (!socket || !socket.writable) {
-      return Promise.reject(new Error(ERR_CONNECTION_CLOSED));
+      return Promise.reject(new CommonError(ERR_CONNECTION_CLOSED, 'write', ErrorCode.ServiceUnavailable));
     }
     try {
       const d: IPCPacketType = {
