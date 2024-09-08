@@ -104,7 +104,7 @@ export class IPCServer extends EventEmitter {
   }
 
   ping(data?: IPCPayloadData, timeout = DEFAULT_TIMEOUT) {
-    return Promise.allSettled(this.connections.map(c => c.ping(data, timeout) as Promise<number>));
+    return Promise.allSettled(this.connections.map(async c => ({id: c.id, ping: (await c.ping(data, timeout)) as number})));
   }
 
   pause(): void {
