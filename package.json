@@ -33,7 +33,6 @@
     "release.alpha": "pnpm run release -- --prerelease alpha"
   },
   "dependencies": {
-    "custom-ability": "^2.0.0",
     "events-ex": "^2.0.0"
   },
   "devDependencies": {
