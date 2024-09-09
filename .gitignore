@@ -10,6 +10,7 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+refs
 *.local
 .cache
 .nyc_output/
