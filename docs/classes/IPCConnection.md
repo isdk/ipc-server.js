@@ -1,90 +1,87 @@
-[@isdk/ipc-server](../README.md) / [Exports](../modules.md) / IPCClient
+[@isdk/ipc-server](../README.md) / [Exports](../modules.md) / IPCConnection
 
-# Class: IPCClient
+# Class: IPCConnection
 
 ## Hierarchy
 
 - [`IPCBaseConnection`](IPCBaseConnection.md)
 
-  ↳ **`IPCClient`**
+  ↳ **`IPCConnection`**
 
 ## Table of contents
 
 ### Constructors
 
-- [constructor](IPCClient.md#constructor)
+- [constructor](IPCConnection.md#constructor)
 
 ### Properties
 
-- [\_buffer](IPCClient.md#_buffer)
-- [\_bufferTotalLength](IPCClient.md#_buffertotallength)
-- [\_closed](IPCClient.md#_closed)
-- [\_drainQueue](IPCClient.md#_drainqueue)
-- [\_end](IPCClient.md#_end)
-- [\_error](IPCClient.md#_error)
-- [\_events](IPCClient.md#_events)
-- [\_payload](IPCClient.md#_payload)
-- [\_promise](IPCClient.md#_promise)
-- [\_requests](IPCClient.md#_requests)
-- [\_retries](IPCClient.md#_retries)
-- [id](IPCClient.md#id)
-- [options](IPCClient.md#options)
-- [socket](IPCClient.md#socket)
-- [status](IPCClient.md#status)
-- [defaultMaxListeners](IPCClient.md#defaultmaxlisteners)
+- [\_buffer](IPCConnection.md#_buffer)
+- [\_bufferTotalLength](IPCConnection.md#_buffertotallength)
+- [\_closed](IPCConnection.md#_closed)
+- [\_drainQueue](IPCConnection.md#_drainqueue)
+- [\_end](IPCConnection.md#_end)
+- [\_error](IPCConnection.md#_error)
+- [\_requests](IPCConnection.md#_requests)
+- [\_retries](IPCConnection.md#_retries)
+- [connectedAt](IPCConnection.md#connectedat)
+- [id](IPCConnection.md#id)
+- [server](IPCConnection.md#server)
+- [socket](IPCConnection.md#socket)
+- [defaultMaxListeners](IPCConnection.md#defaultmaxlisteners)
 
 ### Methods
 
-- [\_drain](IPCClient.md#_drain)
-- [\_init](IPCClient.md#_init)
-- [\_nonce](IPCClient.md#_nonce)
-- [\_onClose](IPCClient.md#_onclose)
-- [\_onError](IPCClient.md#_onerror)
-- [\_pack](IPCClient.md#_pack)
-- [\_parse](IPCClient.md#_parse)
-- [\_processBuffer](IPCClient.md#_processbuffer)
-- [\_read](IPCClient.md#_read)
-- [\_readFromBuffer](IPCClient.md#_readfrombuffer)
-- [\_readToBuffer](IPCClient.md#_readtobuffer)
-- [\_ready](IPCClient.md#_ready)
-- [\_setStatus](IPCClient.md#_setstatus)
-- [\_tag](IPCClient.md#_tag)
-- [\_tryWrite](IPCClient.md#_trywrite)
-- [\_write](IPCClient.md#_write)
-- [close](IPCClient.md#close)
-- [connect](IPCClient.md#connect)
-- [destroy](IPCClient.md#destroy)
-- [emit](IPCClient.md#emit)
-- [emitAsync](IPCClient.md#emitasync)
-- [listenerCount](IPCClient.md#listenercount)
-- [listeners](IPCClient.md#listeners)
-- [off](IPCClient.md#off)
-- [on](IPCClient.md#on)
-- [once](IPCClient.md#once)
-- [ping](IPCClient.md#ping)
-- [readBuffer](IPCClient.md#readbuffer)
-- [removeAllListeners](IPCClient.md#removealllisteners)
-- [request](IPCClient.md#request)
-- [send](IPCClient.md#send)
-- [sendByType](IPCClient.md#sendbytype)
-- [setMaxListeners](IPCClient.md#setmaxlisteners)
-- [listenerCount](IPCClient.md#listenercount-1)
+- [\_drain](IPCConnection.md#_drain)
+- [\_init](IPCConnection.md#_init)
+- [\_nonce](IPCConnection.md#_nonce)
+- [\_onClose](IPCConnection.md#_onclose)
+- [\_onError](IPCConnection.md#_onerror)
+- [\_pack](IPCConnection.md#_pack)
+- [\_parse](IPCConnection.md#_parse)
+- [\_processBuffer](IPCConnection.md#_processbuffer)
+- [\_read](IPCConnection.md#_read)
+- [\_readFromBuffer](IPCConnection.md#_readfrombuffer)
+- [\_readToBuffer](IPCConnection.md#_readtobuffer)
+- [\_tag](IPCConnection.md#_tag)
+- [\_tryWrite](IPCConnection.md#_trywrite)
+- [\_write](IPCConnection.md#_write)
+- [close](IPCConnection.md#close)
+- [destroy](IPCConnection.md#destroy)
+- [emit](IPCConnection.md#emit)
+- [emitAsync](IPCConnection.md#emitasync)
+- [listenerCount](IPCConnection.md#listenercount)
+- [listeners](IPCConnection.md#listeners)
+- [off](IPCConnection.md#off)
+- [on](IPCConnection.md#on)
+- [once](IPCConnection.md#once)
+- [pause](IPCConnection.md#pause)
+- [ping](IPCConnection.md#ping)
+- [readBuffer](IPCConnection.md#readbuffer)
+- [removeAllListeners](IPCConnection.md#removealllisteners)
+- [request](IPCConnection.md#request)
+- [resume](IPCConnection.md#resume)
+- [send](IPCConnection.md#send)
+- [sendByType](IPCConnection.md#sendbytype)
+- [setMaxListeners](IPCConnection.md#setmaxlisteners)
+- [listenerCount](IPCConnection.md#listenercount-1)
 
 ## Constructors
 
 ### constructor
 
-• **new IPCClient**(`options?`): [`IPCClient`](IPCClient.md)
+• **new IPCConnection**(`socket`, `server`): [`IPCConnection`](IPCConnection.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `options` | [`IPCClientOptions`](../interfaces/IPCClientOptions.md) |
+| `socket` | `Socket` |
+| `server` | [`IPCServer`](IPCServer.md) |
 
 #### Returns
 
-[`IPCClient`](IPCClient.md)
+[`IPCConnection`](IPCConnection.md)
 
 #### Overrides
 
@@ -92,7 +89,7 @@
 
 #### Defined in
 
-[packages/ipc-server/src/client.ts:39](https://github.com/isdk/ipc-server.js/blob/73d391d9902d34e9f6defa736eebc1d05c9788c2/src/client.ts#L39)
+[packages/ipc-server/src/connection.ts:13](https://github.com/isdk/ipc-server.js/blob/73d391d9902d34e9f6defa736eebc1d05c9788c2/src/connection.ts#L13)
 
 ## Properties
 
@@ -180,36 +177,6 @@ ___
 
 ___
 
-### \_events
-
-• **\_events**: `any`
-
-#### Defined in
-
-[packages/ipc-server/src/client.ts:37](https://github.com/isdk/ipc-server.js/blob/73d391d9902d34e9f6defa736eebc1d05c9788c2/src/client.ts#L37)
-
-___
-
-### \_payload
-
-• **\_payload**: `any`
-
-#### Defined in
-
-[packages/ipc-server/src/client.ts:36](https://github.com/isdk/ipc-server.js/blob/73d391d9902d34e9f6defa736eebc1d05c9788c2/src/client.ts#L36)
-
-___
-
-### \_promise
-
-• **\_promise**: `any`
-
-#### Defined in
-
-[packages/ipc-server/src/client.ts:34](https://github.com/isdk/ipc-server.js/blob/73d391d9902d34e9f6defa736eebc1d05c9788c2/src/client.ts#L34)
-
-___
-
 ### \_requests
 
 • **\_requests**: `any` = `{}`
@@ -230,7 +197,17 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/client.ts:35](https://github.com/isdk/ipc-server.js/blob/73d391d9902d34e9f6defa736eebc1d05c9788c2/src/client.ts#L35)
+[packages/ipc-server/src/connection.ts:9](https://github.com/isdk/ipc-server.js/blob/73d391d9902d34e9f6defa736eebc1d05c9788c2/src/connection.ts#L9)
+
+___
+
+### connectedAt
+
+• **connectedAt**: `number`
+
+#### Defined in
+
+[packages/ipc-server/src/connection.ts:11](https://github.com/isdk/ipc-server.js/blob/73d391d9902d34e9f6defa736eebc1d05c9788c2/src/connection.ts#L11)
 
 ___
 
@@ -248,13 +225,13 @@ ___
 
 ___
 
-### options
+### server
 
-• **options**: [`IPCClientOptions`](../interfaces/IPCClientOptions.md)
+• **server**: [`IPCServer`](IPCServer.md)
 
 #### Defined in
 
-[packages/ipc-server/src/client.ts:39](https://github.com/isdk/ipc-server.js/blob/73d391d9902d34e9f6defa736eebc1d05c9788c2/src/client.ts#L39)
+[packages/ipc-server/src/connection.ts:13](https://github.com/isdk/ipc-server.js/blob/73d391d9902d34e9f6defa736eebc1d05c9788c2/src/connection.ts#L13)
 
 ___
 
@@ -269,16 +246,6 @@ ___
 #### Defined in
 
 [packages/ipc-server/src/base-connection.ts:68](https://github.com/isdk/ipc-server.js/blob/73d391d9902d34e9f6defa736eebc1d05c9788c2/src/base-connection.ts#L68)
-
-___
-
-### status
-
-• **status**: [`IPCClientStatus`](../enums/IPCClientStatus.md)
-
-#### Defined in
-
-[packages/ipc-server/src/client.ts:33](https://github.com/isdk/ipc-server.js/blob/73d391d9902d34e9f6defa736eebc1d05c9788c2/src/client.ts#L33)
 
 ___
 
@@ -324,7 +291,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/client.ts:167](https://github.com/isdk/ipc-server.js/blob/73d391d9902d34e9f6defa736eebc1d05c9788c2/src/client.ts#L167)
+[packages/ipc-server/src/connection.ts:29](https://github.com/isdk/ipc-server.js/blob/73d391d9902d34e9f6defa736eebc1d05c9788c2/src/connection.ts#L29)
 
 ___
 
@@ -360,7 +327,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/client.ts:82](https://github.com/isdk/ipc-server.js/blob/73d391d9902d34e9f6defa736eebc1d05c9788c2/src/client.ts#L82)
+[packages/ipc-server/src/connection.ts:80](https://github.com/isdk/ipc-server.js/blob/73d391d9902d34e9f6defa736eebc1d05c9788c2/src/connection.ts#L80)
 
 ___
 
@@ -380,7 +347,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/client.ts:75](https://github.com/isdk/ipc-server.js/blob/73d391d9902d34e9f6defa736eebc1d05c9788c2/src/client.ts#L75)
+[packages/ipc-server/src/connection.ts:71](https://github.com/isdk/ipc-server.js/blob/73d391d9902d34e9f6defa736eebc1d05c9788c2/src/connection.ts#L71)
 
 ___
 
@@ -428,7 +395,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/client.ts:196](https://github.com/isdk/ipc-server.js/blob/73d391d9902d34e9f6defa736eebc1d05c9788c2/src/client.ts#L196)
+[packages/ipc-server/src/connection.ts:91](https://github.com/isdk/ipc-server.js/blob/73d391d9902d34e9f6defa736eebc1d05c9788c2/src/connection.ts#L91)
 
 ___
 
@@ -522,40 +489,6 @@ ___
 
 ___
 
-### \_ready
-
-▸ **_ready**(): `void`
-
-#### Returns
-
-`void`
-
-#### Defined in
-
-[packages/ipc-server/src/client.ts:121](https://github.com/isdk/ipc-server.js/blob/73d391d9902d34e9f6defa736eebc1d05c9788c2/src/client.ts#L121)
-
-___
-
-### \_setStatus
-
-▸ **_setStatus**(`status`): `void`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `status` | [`IPCClientStatus`](../enums/IPCClientStatus.md) |
-
-#### Returns
-
-`void`
-
-#### Defined in
-
-[packages/ipc-server/src/client.ts:191](https://github.com/isdk/ipc-server.js/blob/73d391d9902d34e9f6defa736eebc1d05c9788c2/src/client.ts#L191)
-
-___
-
 ### \_tag
 
 ▸ **_tag**(`_size`): `number`[]
@@ -588,7 +521,7 @@ ___
 
 | Name | Type | Default value |
 | :------ | :------ | :------ |
-| `op` | `number` | `undefined` |
+| `op` | [`IPCMessageType`](../enums/IPCMessageType.md) | `undefined` |
 | `data?` | `any` | `undefined` |
 | `nonce?` | `string` | `undefined` |
 | `retries` | `number` | `0` |
@@ -603,7 +536,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/client.ts:246](https://github.com/isdk/ipc-server.js/blob/73d391d9902d34e9f6defa736eebc1d05c9788c2/src/client.ts#L246)
+[packages/ipc-server/src/connection.ts:153](https://github.com/isdk/ipc-server.js/blob/73d391d9902d34e9f6defa736eebc1d05c9788c2/src/connection.ts#L153)
 
 ___
 
@@ -655,26 +588,6 @@ ___
 #### Defined in
 
 [packages/ipc-server/src/base-connection.ts:117](https://github.com/isdk/ipc-server.js/blob/73d391d9902d34e9f6defa736eebc1d05c9788c2/src/base-connection.ts#L117)
-
-___
-
-### connect
-
-▸ **connect**(`data?`): `Promise`\<`unknown`\>
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `data?` | `any` |
-
-#### Returns
-
-`Promise`\<`unknown`\>
-
-#### Defined in
-
-[packages/ipc-server/src/client.ts:51](https://github.com/isdk/ipc-server.js/blob/73d391d9902d34e9f6defa736eebc1d05c9788c2/src/client.ts#L51)
 
 ___
 
@@ -915,6 +828,20 @@ node_modules/.pnpm/events-ex@2.0.0/node_modules/events-ex/lib/event-emitter.d.ts
 
 ___
 
+### pause
+
+▸ **pause**(): `void`
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+[packages/ipc-server/src/connection.ts:23](https://github.com/isdk/ipc-server.js/blob/73d391d9902d34e9f6defa736eebc1d05c9788c2/src/connection.ts#L23)
+
+___
+
 ### ping
 
 ▸ **ping**(`data?`, `timeout?`): `Promise`\<`unknown`\>
@@ -1014,6 +941,20 @@ ___
 #### Defined in
 
 [packages/ipc-server/src/base-connection.ts:109](https://github.com/isdk/ipc-server.js/blob/73d391d9902d34e9f6defa736eebc1d05c9788c2/src/base-connection.ts#L109)
+
+___
+
+### resume
+
+▸ **resume**(): `void`
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+[packages/ipc-server/src/connection.ts:26](https://github.com/isdk/ipc-server.js/blob/73d391d9902d34e9f6defa736eebc1d05c9788c2/src/connection.ts#L26)
 
 ___
 
