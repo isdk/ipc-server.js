@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.3.0](https://github.com/isdk/ipc-server.js/compare/v0.2.0...v0.3.0) (2024-09-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* the special(non-startWith "/" and ".") pipe path will be prefix to tmpdir for non-win system
+
+### Bug Fixes
+
+* **ts:** remove unused vars ([c972214](https://github.com/isdk/ipc-server.js/commit/c972214e727e2be9fff435b018f1d11bff9c9b57))
+
+
+### Refactor
+
+* the special(non-startWith "/" and ".") pipe path will be prefix to tmpdir for non-win system ([c5da717](https://github.com/isdk/ipc-server.js/commit/c5da717b5521e9916177c1151d0786c836b7643e))
+
 ## [0.2.0](https://github.com/isdk/ipc-server.js/compare/v0.1.1...v0.2.0) (2024-09-08)
 
 
