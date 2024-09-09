@@ -4,7 +4,7 @@ import type {IpcNetConnectOpts} from "net";
 import { IPCBaseConnection, IPCEvents, IPCPacketType, IPCPayloadData, IPCNetSocketEvents, IPCMessageType, } from "./base-connection.js";
 import {
 	DEFAULT_MAX_RETRY_TIME, DEFAULT_PATH, DEFAULT_RETRIES, DEFAULT_RETRY_INCREMENT,
-	ERR_CONNECTION_CLOSED, ERR_UNKNOWN, ERR_NOT_IDLE, ERR_NOT_READY, ERR_BAD_PATH,
+	ERR_CONNECTION_CLOSED, ERR_UNKNOWN, ERR_NOT_IDLE, ERR_NOT_READY,
 	getValidPipePath,
 } from "./constants.js";
 import { CommonError, ErrorCode } from "@isdk/common-error";

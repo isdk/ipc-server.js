@@ -3,7 +3,7 @@ import { unlinkSync, statSync } from "fs";
 import { EventEmitter } from "events-ex";
 
 import { IPCConnection } from "./connection";
-import { ERR_BAD_TIMEOUT, DEFAULT_CONNECTION_TIMEOUT, DEFAULT_PATH, DEFAULT_RETRIES, DEFAULT_TIMEOUT, ERR_ADDRINUSE, ERR_SERVER_CLOSED, ERR_SERVER_EXISTS, ERR_BAD_PATH, getValidPipePath, } from "./constants";
+import { ERR_BAD_TIMEOUT, DEFAULT_CONNECTION_TIMEOUT, DEFAULT_PATH, DEFAULT_RETRIES, DEFAULT_TIMEOUT, ERR_ADDRINUSE, ERR_SERVER_CLOSED, ERR_SERVER_EXISTS, getValidPipePath, } from "./constants";
 import { IPCEvents, IPCNetSocketEvents, IPCPayloadData } from "./base-connection";
 
 type GenIdFunc = () => string;
