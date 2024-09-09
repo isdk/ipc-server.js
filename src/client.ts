@@ -5,6 +5,7 @@ import { IPCBaseConnection, IPCEvents, IPCPacketType, IPCPayloadData, IPCNetSock
 import {
 	DEFAULT_MAX_RETRY_TIME, DEFAULT_PATH, DEFAULT_RETRIES, DEFAULT_RETRY_INCREMENT,
 	ERR_CONNECTION_CLOSED, ERR_UNKNOWN, ERR_NOT_IDLE, ERR_NOT_READY, ERR_BAD_PATH,
+	getValidPipePath,
 } from "./constants.js";
 import { CommonError, ErrorCode } from "@isdk/common-error";
 
@@ -44,12 +45,7 @@ export class IPCClient extends IPCBaseConnection {
 		if (!(options.maxRetryTime! >= DEFAULT_RETRY_INCREMENT)) { options.maxRetryTime = DEFAULT_MAX_RETRY_TIME }
 
 		this._retries = 0;
-
-		if(!options.path) { options.path = DEFAULT_PATH }
-		if(options.path && typeof options.path !== "string") { throw new Error(ERR_BAD_PATH); }
-		if(options.path && process.platform === "win32") {
-			options.path = `\\\\.\\pipe\\${options.path.replace(/^\//, "").replace(/\//g, "-")}`
-		}
+		options.path = getValidPipePath(options.path)
 	}
 
 	connect(data?: IPCPayloadData) {
