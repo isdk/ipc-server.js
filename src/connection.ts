@@ -114,7 +114,9 @@ export class IPCConnection extends IPCBaseConnection {
 			}
 			case IPCMessageType.REQUEST: {
 				if(this.server.listenerCount(IPCEvents.REQUEST)) {
-					this.server.emit(IPCEvents.REQUEST, data.d, (response: any) => this._tryWrite(IPCMessageType.RESPONSE, response, data.n), this);
+					this.server.emitAsync(IPCEvents.REQUEST, data.d, (response: any) => {
+						this._tryWrite(IPCMessageType.RESPONSE, response, data.n)
+					}, this);
 				} else {
 					this._tryWrite(IPCMessageType.RESPONSE, void 0, data.n).catch((e: Error) => socket.emit(IPCNetSocketEvents.ERROR, e));
 				}

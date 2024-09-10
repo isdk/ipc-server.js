@@ -69,6 +69,7 @@ export abstract class IPCBaseConnection extends EventEmitter {
 	declare _error: Error|undefined
 	declare _end: any
 
+	_subscriptions: string[] = []
   _buffer: Buffer[] = []; // internal buffer for readable data
   _bufferTotalLength = 0; // the total length of the buffered data
 
@@ -108,6 +109,18 @@ export abstract class IPCBaseConnection extends EventEmitter {
 
   request(data?: IPCPayloadData, timeout = DEFAULT_TIMEOUT) {
     return this.sendByType(IPCMessageType.REQUEST, data, timeout)
+  }
+
+  publish(event: string, message: any, timeout = DEFAULT_TIMEOUT) {
+    return this.request({pub: event, message}, timeout) as Promise<boolean>
+  }
+
+  subscribe(event: string|string[], timeout = DEFAULT_TIMEOUT) {
+    return this.request({sub: event}, timeout) as Promise<boolean>
+  }
+
+  unsubscribe(event: string|string[], timeout = DEFAULT_TIMEOUT) {
+    return this.request({unsub: event}, timeout) as Promise<boolean>
   }
 
   ping(data?: IPCPayloadData, timeout = DEFAULT_TIMEOUT) {
@@ -154,6 +167,7 @@ export abstract class IPCBaseConnection extends EventEmitter {
 		socket.destroy()
     this._buffer.length = 0
     this._bufferTotalLength = 0
+    this._subscriptions.length = 0
   }
 
   _nonce() {

@@ -1,6 +1,6 @@
 import net, { type ServerOpts, type ListenOptions } from "net";
 import { unlinkSync, statSync } from "fs";
-import { EventEmitter } from "events-ex";
+import { Event, EventEmitter } from "events-ex";
 
 import { IPCConnection } from "./connection";
 import { ERR_BAD_TIMEOUT, DEFAULT_CONNECTION_TIMEOUT, DEFAULT_PATH, DEFAULT_RETRIES, DEFAULT_TIMEOUT, ERR_ADDRINUSE, ERR_SERVER_CLOSED, ERR_SERVER_EXISTS, getValidPipePath, } from "./constants";
@@ -30,6 +30,7 @@ export interface IPCServerOptions extends ServerOpts {
 export class IPCServer extends EventEmitter {
   server: net.Server | undefined;
   connections: IPCConnection[] = [];
+  subscriptions: {[event: string]: IPCConnection[]} = {}
 
   constructor(public options: Partial<IPCServerOptions> = {}) {
     super()
@@ -46,6 +47,7 @@ export class IPCServer extends EventEmitter {
     }
 
     options.path = getValidPipePath(options.path)
+    this.on(IPCEvents.REQUEST, this._onRequest)
   }
 
   start(): Promise<IPCServer> {
@@ -148,5 +150,62 @@ export class IPCServer extends EventEmitter {
       this.connections.push(client);
       this.emit(IPCEvents.CONNECT, client, extras);
     });
+  }
+
+  async _onRequest(this: Event, request: any, response: (data: any) => Promise<void>, connection: IPCConnection) {
+    const that = this.target as IPCServer || this
+    let processed = false
+    if (request) {
+      if (request.pub) {
+        await that.publish(request)
+        await response({result: true})
+        processed = true
+      } else if (request.sub) {
+        const result = that.subscribe(request.sub, connection)
+        await response({result})
+        processed = true
+      } else if (request.unsub) {
+        const result = that.unsubscribe(request.unsub, connection)
+        await response({result})
+        processed = true
+      }
+    }
+    this.stopped = processed
+  }
+
+  async publish(request: {pub: string, message: any}) {
+    const connections = this.subscriptions[request.pub]
+    if (connections) for (const c of connections) {
+      await c.send(request).catch(e => this.emit(IPCEvents.ERROR, e));
+    }
+  }
+
+  subscribe(events: string|string[], connection: IPCConnection) {
+    let result = false
+    if (events && !Array.isArray(events)) { events = [events] }
+    for (const event of events) {
+      const connections = this.subscriptions[event] || []
+      if (!connections.find(conn => conn.id === connection.id)) {
+        connections.push(connection)
+        this.subscriptions[event] = connections
+        result = true
+      }
+
+    }
+    return result
+  }
+
+  unsubscribe(events: string|string[], connection: IPCConnection) {
+    let result = false
+    if (events && !Array.isArray(events)) { events = [events] }
+    for (const event of events) {
+      const connections = this.subscriptions[event]
+      const ix = connections?.findIndex(conn => conn.id === connection.id)
+      if (ix >= 0) {
+        connections.splice(ix, 1)
+        result = true
+      }
+    }
+    return result
   }
 }

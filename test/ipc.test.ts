@@ -80,7 +80,43 @@ describe('IPCClient/Server', async () => {
 		expect(received).toHaveLength(count)
 		expect(svrData).toHaveLength(count)
   })
-});
+
+	it('should pub/sub', async ()=>{
+    const client = new IPCClient()
+    await client.connect('test1')
+    const client1 = new IPCClient()
+    await client1.connect()
+		let result = await client.subscribe('test')
+		expect(result).toHaveProperty('result', true)
+		const evtResult: any[] = []
+		const evtResult1: any[] = []
+		client.on('test', data =>{
+			evtResult.push(data)
+		})
+		client1.on('test', data =>{
+			evtResult1.push(data)
+		})
+
+		result = await client1.publish('test', 'hello1')
+
+		expect(result).toHaveProperty('result', true)
+		expect(evtResult).toHaveLength(1)
+		expect(evtResult[0]).toBe('hello1')
+		await server.publish({pub: 'test', message: 'from server'})
+		await wait(1)
+		expect(evtResult).toHaveLength(2)
+		expect(evtResult[1]).toBe('from server')
+		expect(evtResult1).toHaveLength(0)
+		result = await client.unsubscribe('test')
+		expect(result).toHaveProperty('result', true)
+		await wait(1)
+		await server.publish({pub: 'test', message: 'from server'})
+		await wait(1)
+		expect(evtResult).toHaveLength(2)
+		result = await client.unsubscribe('test')
+		expect(result).toHaveProperty('result', false)
+	});
+})
 
 async function messageTest(client: IPCClient, count = 99) {
 	const vReceived: any[] = []
@@ -173,6 +209,7 @@ async function messageEcho(m, client) {
 }
 
 async function requestEcho(m, reply) {
+	console.log('🚀 ~ requestEcho ~ m:', m)
 	svrData.push(m)
 	await reply(m);
 }

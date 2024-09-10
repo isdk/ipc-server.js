@@ -201,7 +201,11 @@ export class IPCClient extends IPCBaseConnection {
 				break;
 			}
 			case IPCMessageType.MESSAGE: {
-				this.emit(IPCEvents.MESSAGE, data.d);
+				if (data.d?.pub && data.d.message) {
+					this.emit(data.d.pub, data.d.message)
+				} else {
+					this.emit(IPCEvents.MESSAGE, data.d);
+				}
 				break;
 			}
 			case IPCMessageType.REQUEST: {
