@@ -27,6 +27,7 @@
 - [\_end](IPCBaseConnection.md#_end)
 - [\_error](IPCBaseConnection.md#_error)
 - [\_requests](IPCBaseConnection.md#_requests)
+- [\_subscriptions](IPCBaseConnection.md#_subscriptions)
 - [id](IPCBaseConnection.md#id)
 - [socket](IPCBaseConnection.md#socket)
 - [defaultMaxListeners](IPCBaseConnection.md#defaultmaxlisteners)
@@ -56,12 +57,15 @@
 - [on](IPCBaseConnection.md#on)
 - [once](IPCBaseConnection.md#once)
 - [ping](IPCBaseConnection.md#ping)
+- [publish](IPCBaseConnection.md#publish)
 - [readBuffer](IPCBaseConnection.md#readbuffer)
 - [removeAllListeners](IPCBaseConnection.md#removealllisteners)
 - [request](IPCBaseConnection.md#request)
 - [send](IPCBaseConnection.md#send)
 - [sendByType](IPCBaseConnection.md#sendbytype)
 - [setMaxListeners](IPCBaseConnection.md#setmaxlisteners)
+- [subscribe](IPCBaseConnection.md#subscribe)
+- [unsubscribe](IPCBaseConnection.md#unsubscribe)
 - [listenerCount](IPCBaseConnection.md#listenercount-1)
 
 ## Constructors
@@ -82,7 +86,7 @@
 
 #### Defined in
 
-[packages/ipc-server/src/base-connection.ts:72](https://github.com/isdk/ipc-server.js/blob/971a7e3efc364df18f5e69b654e06f26ac4a972c/src/base-connection.ts#L72)
+[packages/ipc-server/src/base-connection.ts:73](https://github.com/isdk/ipc-server.js/blob/e240e4395923d3d90123c33159fd9e4a3e252a28/src/base-connection.ts#L73)
 
 ___
 
@@ -92,7 +96,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/base-connection.ts:73](https://github.com/isdk/ipc-server.js/blob/971a7e3efc364df18f5e69b654e06f26ac4a972c/src/base-connection.ts#L73)
+[packages/ipc-server/src/base-connection.ts:74](https://github.com/isdk/ipc-server.js/blob/e240e4395923d3d90123c33159fd9e4a3e252a28/src/base-connection.ts#L74)
 
 ___
 
@@ -102,7 +106,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/base-connection.ts:67](https://github.com/isdk/ipc-server.js/blob/971a7e3efc364df18f5e69b654e06f26ac4a972c/src/base-connection.ts#L67)
+[packages/ipc-server/src/base-connection.ts:67](https://github.com/isdk/ipc-server.js/blob/e240e4395923d3d90123c33159fd9e4a3e252a28/src/base-connection.ts#L67)
 
 ___
 
@@ -112,7 +116,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/base-connection.ts:76](https://github.com/isdk/ipc-server.js/blob/971a7e3efc364df18f5e69b654e06f26ac4a972c/src/base-connection.ts#L76)
+[packages/ipc-server/src/base-connection.ts:77](https://github.com/isdk/ipc-server.js/blob/e240e4395923d3d90123c33159fd9e4a3e252a28/src/base-connection.ts#L77)
 
 ___
 
@@ -122,7 +126,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/base-connection.ts:70](https://github.com/isdk/ipc-server.js/blob/971a7e3efc364df18f5e69b654e06f26ac4a972c/src/base-connection.ts#L70)
+[packages/ipc-server/src/base-connection.ts:70](https://github.com/isdk/ipc-server.js/blob/e240e4395923d3d90123c33159fd9e4a3e252a28/src/base-connection.ts#L70)
 
 ___
 
@@ -132,7 +136,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/base-connection.ts:69](https://github.com/isdk/ipc-server.js/blob/971a7e3efc364df18f5e69b654e06f26ac4a972c/src/base-connection.ts#L69)
+[packages/ipc-server/src/base-connection.ts:69](https://github.com/isdk/ipc-server.js/blob/e240e4395923d3d90123c33159fd9e4a3e252a28/src/base-connection.ts#L69)
 
 ___
 
@@ -142,7 +146,17 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/base-connection.ts:75](https://github.com/isdk/ipc-server.js/blob/971a7e3efc364df18f5e69b654e06f26ac4a972c/src/base-connection.ts#L75)
+[packages/ipc-server/src/base-connection.ts:76](https://github.com/isdk/ipc-server.js/blob/e240e4395923d3d90123c33159fd9e4a3e252a28/src/base-connection.ts#L76)
+
+___
+
+### \_subscriptions
+
+• **\_subscriptions**: `string`[] = `[]`
+
+#### Defined in
+
+[packages/ipc-server/src/base-connection.ts:72](https://github.com/isdk/ipc-server.js/blob/e240e4395923d3d90123c33159fd9e4a3e252a28/src/base-connection.ts#L72)
 
 ___
 
@@ -152,7 +166,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/base-connection.ts:66](https://github.com/isdk/ipc-server.js/blob/971a7e3efc364df18f5e69b654e06f26ac4a972c/src/base-connection.ts#L66)
+[packages/ipc-server/src/base-connection.ts:66](https://github.com/isdk/ipc-server.js/blob/e240e4395923d3d90123c33159fd9e4a3e252a28/src/base-connection.ts#L66)
 
 ___
 
@@ -162,7 +176,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/base-connection.ts:68](https://github.com/isdk/ipc-server.js/blob/971a7e3efc364df18f5e69b654e06f26ac4a972c/src/base-connection.ts#L68)
+[packages/ipc-server/src/base-connection.ts:68](https://github.com/isdk/ipc-server.js/blob/e240e4395923d3d90123c33159fd9e4a3e252a28/src/base-connection.ts#L68)
 
 ___
 
@@ -186,7 +200,7 @@ node_modules/.pnpm/events-ex@2.0.0/node_modules/events-ex/lib/event-emitter.d.ts
 
 #### Defined in
 
-[packages/ipc-server/src/base-connection.ts:303](https://github.com/isdk/ipc-server.js/blob/971a7e3efc364df18f5e69b654e06f26ac4a972c/src/base-connection.ts#L303)
+[packages/ipc-server/src/base-connection.ts:317](https://github.com/isdk/ipc-server.js/blob/e240e4395923d3d90123c33159fd9e4a3e252a28/src/base-connection.ts#L317)
 
 ___
 
@@ -200,7 +214,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/base-connection.ts:159](https://github.com/isdk/ipc-server.js/blob/971a7e3efc364df18f5e69b654e06f26ac4a972c/src/base-connection.ts#L159)
+[packages/ipc-server/src/base-connection.ts:173](https://github.com/isdk/ipc-server.js/blob/e240e4395923d3d90123c33159fd9e4a3e252a28/src/base-connection.ts#L173)
 
 ___
 
@@ -214,7 +228,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/base-connection.ts:150](https://github.com/isdk/ipc-server.js/blob/971a7e3efc364df18f5e69b654e06f26ac4a972c/src/base-connection.ts#L150)
+[packages/ipc-server/src/base-connection.ts:163](https://github.com/isdk/ipc-server.js/blob/e240e4395923d3d90123c33159fd9e4a3e252a28/src/base-connection.ts#L163)
 
 ___
 
@@ -234,7 +248,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/base-connection.ts:261](https://github.com/isdk/ipc-server.js/blob/971a7e3efc364df18f5e69b654e06f26ac4a972c/src/base-connection.ts#L261)
+[packages/ipc-server/src/base-connection.ts:275](https://github.com/isdk/ipc-server.js/blob/e240e4395923d3d90123c33159fd9e4a3e252a28/src/base-connection.ts#L275)
 
 ___
 
@@ -254,7 +268,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/base-connection.ts:79](https://github.com/isdk/ipc-server.js/blob/971a7e3efc364df18f5e69b654e06f26ac4a972c/src/base-connection.ts#L79)
+[packages/ipc-server/src/base-connection.ts:80](https://github.com/isdk/ipc-server.js/blob/e240e4395923d3d90123c33159fd9e4a3e252a28/src/base-connection.ts#L80)
 
 ___
 
@@ -274,7 +288,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/base-connection.ts:181](https://github.com/isdk/ipc-server.js/blob/971a7e3efc364df18f5e69b654e06f26ac4a972c/src/base-connection.ts#L181)
+[packages/ipc-server/src/base-connection.ts:195](https://github.com/isdk/ipc-server.js/blob/e240e4395923d3d90123c33159fd9e4a3e252a28/src/base-connection.ts#L195)
 
 ___
 
@@ -288,7 +302,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/base-connection.ts:173](https://github.com/isdk/ipc-server.js/blob/971a7e3efc364df18f5e69b654e06f26ac4a972c/src/base-connection.ts#L173)
+[packages/ipc-server/src/base-connection.ts:187](https://github.com/isdk/ipc-server.js/blob/e240e4395923d3d90123c33159fd9e4a3e252a28/src/base-connection.ts#L187)
 
 ___
 
@@ -308,7 +322,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/base-connection.ts:198](https://github.com/isdk/ipc-server.js/blob/971a7e3efc364df18f5e69b654e06f26ac4a972c/src/base-connection.ts#L198)
+[packages/ipc-server/src/base-connection.ts:212](https://github.com/isdk/ipc-server.js/blob/e240e4395923d3d90123c33159fd9e4a3e252a28/src/base-connection.ts#L212)
 
 ___
 
@@ -328,7 +342,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/base-connection.ts:163](https://github.com/isdk/ipc-server.js/blob/971a7e3efc364df18f5e69b654e06f26ac4a972c/src/base-connection.ts#L163)
+[packages/ipc-server/src/base-connection.ts:177](https://github.com/isdk/ipc-server.js/blob/e240e4395923d3d90123c33159fd9e4a3e252a28/src/base-connection.ts#L177)
 
 ___
 
@@ -348,7 +362,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/base-connection.ts:271](https://github.com/isdk/ipc-server.js/blob/971a7e3efc364df18f5e69b654e06f26ac4a972c/src/base-connection.ts#L271)
+[packages/ipc-server/src/base-connection.ts:285](https://github.com/isdk/ipc-server.js/blob/e240e4395923d3d90123c33159fd9e4a3e252a28/src/base-connection.ts#L285)
 
 ___
 
@@ -370,7 +384,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/base-connection.ts:78](https://github.com/isdk/ipc-server.js/blob/971a7e3efc364df18f5e69b654e06f26ac4a972c/src/base-connection.ts#L78)
+[packages/ipc-server/src/base-connection.ts:79](https://github.com/isdk/ipc-server.js/blob/e240e4395923d3d90123c33159fd9e4a3e252a28/src/base-connection.ts#L79)
 
 ___
 
@@ -384,7 +398,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/base-connection.ts:280](https://github.com/isdk/ipc-server.js/blob/971a7e3efc364df18f5e69b654e06f26ac4a972c/src/base-connection.ts#L280)
+[packages/ipc-server/src/base-connection.ts:294](https://github.com/isdk/ipc-server.js/blob/e240e4395923d3d90123c33159fd9e4a3e252a28/src/base-connection.ts#L294)
 
 ___
 
@@ -406,7 +420,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/base-connection.ts:231](https://github.com/isdk/ipc-server.js/blob/971a7e3efc364df18f5e69b654e06f26ac4a972c/src/base-connection.ts#L231)
+[packages/ipc-server/src/base-connection.ts:245](https://github.com/isdk/ipc-server.js/blob/e240e4395923d3d90123c33159fd9e4a3e252a28/src/base-connection.ts#L245)
 
 ___
 
@@ -427,7 +441,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/base-connection.ts:117](https://github.com/isdk/ipc-server.js/blob/971a7e3efc364df18f5e69b654e06f26ac4a972c/src/base-connection.ts#L117)
+[packages/ipc-server/src/base-connection.ts:130](https://github.com/isdk/ipc-server.js/blob/e240e4395923d3d90123c33159fd9e4a3e252a28/src/base-connection.ts#L130)
 
 ___
 
@@ -447,7 +461,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/base-connection.ts:136](https://github.com/isdk/ipc-server.js/blob/971a7e3efc364df18f5e69b654e06f26ac4a972c/src/base-connection.ts#L136)
+[packages/ipc-server/src/base-connection.ts:149](https://github.com/isdk/ipc-server.js/blob/e240e4395923d3d90123c33159fd9e4a3e252a28/src/base-connection.ts#L149)
 
 ___
 
@@ -653,7 +667,29 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/base-connection.ts:113](https://github.com/isdk/ipc-server.js/blob/971a7e3efc364df18f5e69b654e06f26ac4a972c/src/base-connection.ts#L113)
+[packages/ipc-server/src/base-connection.ts:126](https://github.com/isdk/ipc-server.js/blob/e240e4395923d3d90123c33159fd9e4a3e252a28/src/base-connection.ts#L126)
+
+___
+
+### publish
+
+▸ **publish**(`event`, `message`, `timeout?`): `Promise`\<`boolean`\>
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `event` | `string` | `undefined` |
+| `message` | `any` | `undefined` |
+| `timeout` | `number` | `DEFAULT_TIMEOUT` |
+
+#### Returns
+
+`Promise`\<`boolean`\>
+
+#### Defined in
+
+[packages/ipc-server/src/base-connection.ts:114](https://github.com/isdk/ipc-server.js/blob/e240e4395923d3d90123c33159fd9e4a3e252a28/src/base-connection.ts#L114)
 
 ___
 
@@ -673,7 +709,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/base-connection.ts:223](https://github.com/isdk/ipc-server.js/blob/971a7e3efc364df18f5e69b654e06f26ac4a972c/src/base-connection.ts#L223)
+[packages/ipc-server/src/base-connection.ts:237](https://github.com/isdk/ipc-server.js/blob/e240e4395923d3d90123c33159fd9e4a3e252a28/src/base-connection.ts#L237)
 
 ___
 
@@ -718,7 +754,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/base-connection.ts:109](https://github.com/isdk/ipc-server.js/blob/971a7e3efc364df18f5e69b654e06f26ac4a972c/src/base-connection.ts#L109)
+[packages/ipc-server/src/base-connection.ts:110](https://github.com/isdk/ipc-server.js/blob/e240e4395923d3d90123c33159fd9e4a3e252a28/src/base-connection.ts#L110)
 
 ___
 
@@ -738,7 +774,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/base-connection.ts:81](https://github.com/isdk/ipc-server.js/blob/971a7e3efc364df18f5e69b654e06f26ac4a972c/src/base-connection.ts#L81)
+[packages/ipc-server/src/base-connection.ts:82](https://github.com/isdk/ipc-server.js/blob/e240e4395923d3d90123c33159fd9e4a3e252a28/src/base-connection.ts#L82)
 
 ___
 
@@ -760,7 +796,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/base-connection.ts:85](https://github.com/isdk/ipc-server.js/blob/971a7e3efc364df18f5e69b654e06f26ac4a972c/src/base-connection.ts#L85)
+[packages/ipc-server/src/base-connection.ts:86](https://github.com/isdk/ipc-server.js/blob/e240e4395923d3d90123c33159fd9e4a3e252a28/src/base-connection.ts#L86)
 
 ___
 
@@ -781,6 +817,48 @@ ___
 #### Defined in
 
 node_modules/.pnpm/events-ex@2.0.0/node_modules/events-ex/lib/event-emitter.d.ts:52
+
+___
+
+### subscribe
+
+▸ **subscribe**(`event`, `timeout?`): `Promise`\<`boolean`\>
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `event` | `string` \| `string`[] | `undefined` |
+| `timeout` | `number` | `DEFAULT_TIMEOUT` |
+
+#### Returns
+
+`Promise`\<`boolean`\>
+
+#### Defined in
+
+[packages/ipc-server/src/base-connection.ts:118](https://github.com/isdk/ipc-server.js/blob/e240e4395923d3d90123c33159fd9e4a3e252a28/src/base-connection.ts#L118)
+
+___
+
+### unsubscribe
+
+▸ **unsubscribe**(`event`, `timeout?`): `Promise`\<`boolean`\>
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `event` | `string` \| `string`[] | `undefined` |
+| `timeout` | `number` | `DEFAULT_TIMEOUT` |
+
+#### Returns
+
+`Promise`\<`boolean`\>
+
+#### Defined in
+
+[packages/ipc-server/src/base-connection.ts:122](https://github.com/isdk/ipc-server.js/blob/e240e4395923d3d90123c33159fd9e4a3e252a28/src/base-connection.ts#L122)
 
 ___
 

@@ -5,6 +5,7 @@
 Simple IPC (Inter Process Communication) server for Windows(windows pipe) and Linux(unix sockets)
 
 * Works on Linux, Windows AND macOS.
+* Publish/Subscribe to messages.
 
 ## Examples
 
@@ -77,6 +78,16 @@ await client.send("hello")
 
 // Sends a request to the server.
 const response = await client.request("what time is it?")
+
+// Pubsub events
+client.on("event", (data) => {})
+await client.subscribe("event")
+await client.publish("event", "hello from client")
+await server.publish({pub: "event", message: "hello from server"})
+const client1 = new IPCClient({path: "/myapp"})
+await client1.connect()
+client1.publish("event", "hello from client1")
+await client.unsubscribe("event")
 
 // Gracefully disconnects the client. Any pending operations will be fulfilled before the connection is closed.
 await client.close("shutting down")

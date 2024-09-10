@@ -61,7 +61,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/server.ts:26](https://github.com/isdk/ipc-server.js/blob/971a7e3efc364df18f5e69b654e06f26ac4a972c/src/server.ts#L26)
+[packages/ipc-server/src/server.ts:26](https://github.com/isdk/ipc-server.js/blob/e240e4395923d3d90123c33159fd9e4a3e252a28/src/server.ts#L26)
 
 ___
 
@@ -128,7 +128,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/server.ts:25](https://github.com/isdk/ipc-server.js/blob/971a7e3efc364df18f5e69b654e06f26ac4a972c/src/server.ts#L25)
+[packages/ipc-server/src/server.ts:25](https://github.com/isdk/ipc-server.js/blob/e240e4395923d3d90123c33159fd9e4a3e252a28/src/server.ts#L25)
 
 ___
 
@@ -138,7 +138,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/server.ts:23](https://github.com/isdk/ipc-server.js/blob/971a7e3efc364df18f5e69b654e06f26ac4a972c/src/server.ts#L23)
+[packages/ipc-server/src/server.ts:23](https://github.com/isdk/ipc-server.js/blob/e240e4395923d3d90123c33159fd9e4a3e252a28/src/server.ts#L23)
 
 ___
 
@@ -176,7 +176,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/server.ts:20](https://github.com/isdk/ipc-server.js/blob/971a7e3efc364df18f5e69b654e06f26ac4a972c/src/server.ts#L20)
+[packages/ipc-server/src/server.ts:20](https://github.com/isdk/ipc-server.js/blob/e240e4395923d3d90123c33159fd9e4a3e252a28/src/server.ts#L20)
 
 ___
 
@@ -210,7 +210,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/server.ts:21](https://github.com/isdk/ipc-server.js/blob/971a7e3efc364df18f5e69b654e06f26ac4a972c/src/server.ts#L21)
+[packages/ipc-server/src/server.ts:21](https://github.com/isdk/ipc-server.js/blob/e240e4395923d3d90123c33159fd9e4a3e252a28/src/server.ts#L21)
 
 ___
 
@@ -220,7 +220,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/server.ts:24](https://github.com/isdk/ipc-server.js/blob/971a7e3efc364df18f5e69b654e06f26ac4a972c/src/server.ts#L24)
+[packages/ipc-server/src/server.ts:24](https://github.com/isdk/ipc-server.js/blob/e240e4395923d3d90123c33159fd9e4a3e252a28/src/server.ts#L24)
 
 ___
 
@@ -230,4 +230,4 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/server.ts:22](https://github.com/isdk/ipc-server.js/blob/971a7e3efc364df18f5e69b654e06f26ac4a972c/src/server.ts#L22)
+[packages/ipc-server/src/server.ts:22](https://github.com/isdk/ipc-server.js/blob/e240e4395923d3d90123c33159fd9e4a3e252a28/src/server.ts#L22)
