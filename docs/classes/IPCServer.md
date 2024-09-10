@@ -67,7 +67,7 @@ EventEmitter.constructor
 
 #### Defined in
 
-[packages/ipc-server/src/server.ts:34](https://github.com/isdk/ipc-server.js/blob/c766f9a27898bb3203c84d53484b937191582605/src/server.ts#L34)
+[packages/ipc-server/src/server.ts:34](https://github.com/isdk/ipc-server.js/blob/971a7e3efc364df18f5e69b654e06f26ac4a972c/src/server.ts#L34)
 
 ## Properties
 
@@ -77,7 +77,7 @@ EventEmitter.constructor
 
 #### Defined in
 
-[packages/ipc-server/src/server.ts:32](https://github.com/isdk/ipc-server.js/blob/c766f9a27898bb3203c84d53484b937191582605/src/server.ts#L32)
+[packages/ipc-server/src/server.ts:32](https://github.com/isdk/ipc-server.js/blob/971a7e3efc364df18f5e69b654e06f26ac4a972c/src/server.ts#L32)
 
 ___
 
@@ -87,7 +87,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/server.ts:34](https://github.com/isdk/ipc-server.js/blob/c766f9a27898bb3203c84d53484b937191582605/src/server.ts#L34)
+[packages/ipc-server/src/server.ts:34](https://github.com/isdk/ipc-server.js/blob/971a7e3efc364df18f5e69b654e06f26ac4a972c/src/server.ts#L34)
 
 ___
 
@@ -97,7 +97,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/server.ts:31](https://github.com/isdk/ipc-server.js/blob/c766f9a27898bb3203c84d53484b937191582605/src/server.ts#L31)
+[packages/ipc-server/src/server.ts:31](https://github.com/isdk/ipc-server.js/blob/971a7e3efc364df18f5e69b654e06f26ac4a972c/src/server.ts#L31)
 
 ___
 
@@ -125,7 +125,7 @@ node_modules/.pnpm/events-ex@2.0.0/node_modules/events-ex/lib/event-emitter.d.ts
 
 #### Defined in
 
-[packages/ipc-server/src/server.ts:134](https://github.com/isdk/ipc-server.js/blob/c766f9a27898bb3203c84d53484b937191582605/src/server.ts#L134)
+[packages/ipc-server/src/server.ts:133](https://github.com/isdk/ipc-server.js/blob/971a7e3efc364df18f5e69b654e06f26ac4a972c/src/server.ts#L133)
 
 ___
 
@@ -145,7 +145,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/server.ts:140](https://github.com/isdk/ipc-server.js/blob/c766f9a27898bb3203c84d53484b937191582605/src/server.ts#L140)
+[packages/ipc-server/src/server.ts:139](https://github.com/isdk/ipc-server.js/blob/971a7e3efc364df18f5e69b654e06f26ac4a972c/src/server.ts#L139)
 
 ___
 
@@ -165,7 +165,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/server.ts:128](https://github.com/isdk/ipc-server.js/blob/c766f9a27898bb3203c84d53484b937191582605/src/server.ts#L128)
+[packages/ipc-server/src/server.ts:127](https://github.com/isdk/ipc-server.js/blob/971a7e3efc364df18f5e69b654e06f26ac4a972c/src/server.ts#L127)
 
 ___
 
@@ -179,7 +179,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/server.ts:120](https://github.com/isdk/ipc-server.js/blob/c766f9a27898bb3203c84d53484b937191582605/src/server.ts#L120)
+[packages/ipc-server/src/server.ts:119](https://github.com/isdk/ipc-server.js/blob/971a7e3efc364df18f5e69b654e06f26ac4a972c/src/server.ts#L119)
 
 ___
 
@@ -199,7 +199,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/server.ts:91](https://github.com/isdk/ipc-server.js/blob/c766f9a27898bb3203c84d53484b937191582605/src/server.ts#L91)
+[packages/ipc-server/src/server.ts:90](https://github.com/isdk/ipc-server.js/blob/971a7e3efc364df18f5e69b654e06f26ac4a972c/src/server.ts#L90)
 
 ___
 
@@ -219,7 +219,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/server.ts:83](https://github.com/isdk/ipc-server.js/blob/c766f9a27898bb3203c84d53484b937191582605/src/server.ts#L83)
+[packages/ipc-server/src/server.ts:82](https://github.com/isdk/ipc-server.js/blob/971a7e3efc364df18f5e69b654e06f26ac4a972c/src/server.ts#L82)
 
 ___
 
@@ -446,7 +446,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/server.ts:108](https://github.com/isdk/ipc-server.js/blob/c766f9a27898bb3203c84d53484b937191582605/src/server.ts#L108)
+[packages/ipc-server/src/server.ts:107](https://github.com/isdk/ipc-server.js/blob/971a7e3efc364df18f5e69b654e06f26ac4a972c/src/server.ts#L107)
 
 ___
 
@@ -467,7 +467,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/server.ts:104](https://github.com/isdk/ipc-server.js/blob/c766f9a27898bb3203c84d53484b937191582605/src/server.ts#L104)
+[packages/ipc-server/src/server.ts:103](https://github.com/isdk/ipc-server.js/blob/971a7e3efc364df18f5e69b654e06f26ac4a972c/src/server.ts#L103)
 
 ___
 
@@ -509,7 +509,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/server.ts:114](https://github.com/isdk/ipc-server.js/blob/c766f9a27898bb3203c84d53484b937191582605/src/server.ts#L114)
+[packages/ipc-server/src/server.ts:113](https://github.com/isdk/ipc-server.js/blob/971a7e3efc364df18f5e69b654e06f26ac4a972c/src/server.ts#L113)
 
 ___
 
@@ -547,7 +547,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/server.ts:51](https://github.com/isdk/ipc-server.js/blob/c766f9a27898bb3203c84d53484b937191582605/src/server.ts#L51)
+[packages/ipc-server/src/server.ts:51](https://github.com/isdk/ipc-server.js/blob/971a7e3efc364df18f5e69b654e06f26ac4a972c/src/server.ts#L51)
 
 ___
 
@@ -568,7 +568,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/server.ts:97](https://github.com/isdk/ipc-server.js/blob/c766f9a27898bb3203c84d53484b937191582605/src/server.ts#L97)
+[packages/ipc-server/src/server.ts:96](https://github.com/isdk/ipc-server.js/blob/971a7e3efc364df18f5e69b654e06f26ac4a972c/src/server.ts#L96)
 
 ___
 

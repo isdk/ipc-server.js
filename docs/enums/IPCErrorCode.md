@@ -16,4 +16,4 @@
 
 #### Defined in
 
-[packages/ipc-server/src/base-connection.ts:8](https://github.com/isdk/ipc-server.js/blob/c766f9a27898bb3203c84d53484b937191582605/src/base-connection.ts#L8)
+[packages/ipc-server/src/base-connection.ts:8](https://github.com/isdk/ipc-server.js/blob/971a7e3efc364df18f5e69b654e06f26ac4a972c/src/base-connection.ts#L8)
