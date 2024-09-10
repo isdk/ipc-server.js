@@ -7,5 +7,6 @@ export default defineConfig({
     "setupFiles": [
       "./setupVitest.mjs"
     ],
+    include: ['./src/**/*.test.ts', './test/**/*.test.ts'],
   },
 })
