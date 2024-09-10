@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.3.4](https://github.com/isdk/ipc-server.js/compare/v0.3.3...v0.3.4) (2024-09-10)
+
+
+### Features
+
+* add pub/sub events ([e240e43](https://github.com/isdk/ipc-server.js/commit/e240e4395923d3d90123c33159fd9e4a3e252a28))
+
 ## [0.3.3](https://github.com/isdk/ipc-server.js/compare/v0.3.2...v0.3.3) (2024-09-10)
 
 
