@@ -1,6 +1,6 @@
 {
   "name": "@isdk/ipc-server",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "author": "Riceball LEE <snowyu.lee@gmail.com>",
   "homepage": "https://github.com/isdk/ipc-server.js",
   "repository": {
