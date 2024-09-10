@@ -75,7 +75,6 @@ export class IPCServer extends EventEmitter {
           ...this.options.listenOptions,
           path: this.options.path
         });
-        resolve(this)
       }
     });
   }
