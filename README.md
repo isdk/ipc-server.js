@@ -36,7 +36,7 @@ server.on("connect", (connection, payload) => {
     }
 });
 
-server.on("disconnect", (connection, reason) => {
+server.on("disconnect", (connection: IPCConnection, reason?: string) => {
     console.log(`connection ${connection.id} disconnected because of:`);
     console.log(reason);
 });
@@ -45,11 +45,11 @@ server.on("close", () => {
     console.log("server closed");
 });
 
-server.on("message", (message, connection) => {
+server.on("message", (message, connection: IPCConnection) => {
     console.log(`${message} from ${connection.id}`)
 })
 
-server.on("request", (request, response, connection) => {
+server.on("request", (request: any, response: (data: any) => Promise<void>, connection: IPCConnection) => {
     console.log(`received request from ${connection.id}`);
     console.log("request content:", request);
     // return a response to this request
