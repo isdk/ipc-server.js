@@ -18,7 +18,7 @@
 
 #### Defined in
 
-[packages/ipc-server/src/base-connection.ts:53](https://github.com/isdk/ipc-server.js/blob/73d391d9902d34e9f6defa736eebc1d05c9788c2/src/base-connection.ts#L53)
+[packages/ipc-server/src/base-connection.ts:53](https://github.com/isdk/ipc-server.js/blob/c766f9a27898bb3203c84d53484b937191582605/src/base-connection.ts#L53)
 
 ___
 
@@ -28,7 +28,7 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/base-connection.ts:55](https://github.com/isdk/ipc-server.js/blob/73d391d9902d34e9f6defa736eebc1d05c9788c2/src/base-connection.ts#L55)
+[packages/ipc-server/src/base-connection.ts:55](https://github.com/isdk/ipc-server.js/blob/c766f9a27898bb3203c84d53484b937191582605/src/base-connection.ts#L55)
 
 ___
 
@@ -38,4 +38,4 @@ ___
 
 #### Defined in
 
-[packages/ipc-server/src/base-connection.ts:49](https://github.com/isdk/ipc-server.js/blob/73d391d9902d34e9f6defa736eebc1d05c9788c2/src/base-connection.ts#L49)
+[packages/ipc-server/src/base-connection.ts:49](https://github.com/isdk/ipc-server.js/blob/c766f9a27898bb3203c84d53484b937191582605/src/base-connection.ts#L49)
