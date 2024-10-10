@@ -98,6 +98,9 @@ await client.close("shutting down")
 
 // Immediately disconnects the client. Any pending operations will be rejected.
 client.destroy("shutting down")
+
+const allowReconnect = false // if true, the server notices these connected clients to reconnect to the server after a while. the server will restart. defaults to false.
+await server.close(allowReconnect)
 ```
 
 ## API
