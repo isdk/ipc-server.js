@@ -1,10 +1,13 @@
-@isdk/ipc-server / [Exports](modules.md)
+**@isdk/ipc-server** • [**Docs**](globals.md)
+
+***
 
 # IPC-Server
 
 Simple IPC (Inter Process Communication) server for Windows(windows pipe) and Linux(unix sockets)
 
 * Works on Linux, Windows AND macOS.
+* Request/Response
 * Publish/Subscribe to messages.
 
 ## Examples
@@ -13,6 +16,8 @@ Local IPC server for communication between processes in the same machine.
 
 ```js
 import { IPCServer } from '@isdk/ipc-server'
+import type { Event } from 'events-ex'
+
 const server = new IPCServer({
     path: "/myapp"
 });
@@ -52,11 +57,13 @@ server.on("message", (message, connection: IPCConnection) => {
     console.log(`${message} from ${connection.id}`)
 })
 
-server.on("request", (request: any, response: (data: any) => Promise<void>, connection: IPCConnection) => {
+server.on("request", function(this: Event, request: any, response: (data: any) => Promise<void>, connection: IPCConnection) {
     console.log(`received request from ${connection.id}`);
     console.log("request content:", request);
     // return a response to this request
     response("hello").catch(console.error);
+    // if already processed, do not wanna other request listeners to be triggered
+    this.stopped = true
 });
 
 await server.start()
@@ -94,7 +101,56 @@ await client.close("shutting down")
 
 // Immediately disconnects the client. Any pending operations will be rejected.
 client.destroy("shutting down")
+
+const allowReconnect = false // if true, the server notices these connected clients to reconnect to the server after a while. the server will restart. defaults to false.
+await server.close(allowReconnect)
 ```
+
+## API
+
+### Request/Response
+
+Usage:
+
+When a client sends a request, the server triggers the `request` (`IPCEvents.REQUEST`) event. Users need to listen for the `request` event and respond with the appropriate data.
+
+Note:
+
+If there are multiple `request` event listeners on the server, set `this.stopped = true` within the event handler for requests that have been processed. This prevents subsequent listeners from processing the same request again.
+
+```ts
+import { IPCServer } from '@isdk/ipc-server'
+import type { Event } from 'events-ex'
+
+server.on("request", function(this: Event, request: any, response: (data: any) => Promise<void>, connection: IPCConnection) {
+    if (request?.cmd === "say") {
+      response("hello").catch(console.error);
+      this.stopped = true
+    }
+});
+```
+
+### Event Flow
+
+- `ready`: Triggered when the connection is ready.
+  - **Client**:
+    - Sets `ClientStatus.CONNECTED` when the connection is ready, then performs a `handshake` if configured.
+    - Sends an `IPCMessageType.CONNECTION` message to the server and waits for a response of the same type. After receiving the response, the client emits the `IPCNetSocketEvents.DONE` notification event.
+      - In the `IPCNetSocketEvents.DONE` event, sets the status to `IPCClientStatus.READY` and emits the `IPCEvents.READY` event.
+  - **Server**:
+    - `GET`: Performs a handshake when a `GET` request is received.
+    - `IPC`: Hands over to `_read` for processing.
+      - On the first read (when `connectedAt` is not set), it waits for an `IPCMessageType.CONNECTION` packet:
+        - Checks if the packet type is `IPCMessageType.CONNECTION`. If not, it sends an error event and returns.
+        - If the packet type matches, it sets the client’s `id` and sends an `IPCMessageType.CONNECTION` packet as a response.
+- `end`: Triggered when the connection is closed or ends.
+- `request`:
+  - **Client**:
+    - The `request` method will send a request (`IPCMessageType.REQUEST`) package, which triggers the `request` (`IPCEvents.REQUEST`) event on the server.
+    - Wait the server to respond with an `IPCMessageType.RESPONSE` package until timeout.
+  - **Server**:
+    - If the `IPCMessageType.REQUEST` event is listened to, it triggers the `request` event.
+    - If not, it responds with an empty `IPCMessageType.RESPONSE` packet.
 
 ## Credit
 

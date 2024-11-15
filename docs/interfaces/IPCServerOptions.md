@@ -1,43 +1,28 @@
-[@isdk/ipc-server](../README.md) / [Exports](../modules.md) / IPCServerOptions
+[**@isdk/ipc-server**](../README.md) • **Docs**
+
+***
+
+[@isdk/ipc-server](../globals.md) / IPCServerOptions
 
 # Interface: IPCServerOptions
 
-## Hierarchy
+## Extends
 
 - `ServerOpts`
 
-  ↳ **`IPCServerOptions`**
-
 ## Indexable
 
-▪ [name: `string`]: `any`
-
-## Table of contents
-
-### Properties
-
-- [allowHalfOpen](IPCServerOptions.md#allowhalfopen)
-- [generateID](IPCServerOptions.md#generateid)
-- [keepAlive](IPCServerOptions.md#keepalive)
-- [keepAliveInitialDelay](IPCServerOptions.md#keepaliveinitialdelay)
-- [listenOptions](IPCServerOptions.md#listenoptions)
-- [max](IPCServerOptions.md#max)
-- [noDelay](IPCServerOptions.md#nodelay)
-- [path](IPCServerOptions.md#path)
-- [pauseOnConnect](IPCServerOptions.md#pauseonconnect)
-- [port](IPCServerOptions.md#port)
-- [retries](IPCServerOptions.md#retries)
-- [tls](IPCServerOptions.md#tls)
+ \[`name`: `string`\]: `any`
 
 ## Properties
 
-### allowHalfOpen
+### allowHalfOpen?
 
-• `Optional` **allowHalfOpen**: `boolean`
+> `optional` **allowHalfOpen**: `boolean`
 
 Indicates whether half-opened TCP connections are allowed.
 
-**`Default`**
+#### Default
 
 ```ts
 false
@@ -45,148 +30,166 @@ false
 
 #### Inherited from
 
-ServerOpts.allowHalfOpen
+`ServerOpts.allowHalfOpen`
 
 #### Defined in
 
-node_modules/.pnpm/@types+node@20.14.2/node_modules/@types/node/net.d.ts:510
+node\_modules/.pnpm/@types+node@20.16.12/node\_modules/@types/node/net.d.ts:510
 
-node_modules/.pnpm/@types+node@20.14.9/node_modules/@types/node/net.d.ts:510
+***
 
-___
+### generateID?
 
-### generateID
-
-• `Optional` **generateID**: `GenIdFunc`
+> `optional` **generateID**: `GenIdFunc`
 
 #### Defined in
 
-[packages/ipc-server/src/server.ts:26](https://github.com/isdk/ipc-server.js/blob/e240e4395923d3d90123c33159fd9e4a3e252a28/src/server.ts#L26)
+[packages/ipc-server/src/server.ts:26](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/server.ts#L26)
 
-___
+***
 
-### keepAlive
+### highWaterMark?
 
-• `Optional` **keepAlive**: `boolean`
+> `optional` **highWaterMark**: `number`
+
+Optionally overrides all `net.Socket`s' `readableHighWaterMark` and `writableHighWaterMark`.
+
+#### Default
+
+```ts
+See [stream.getDefaultHighWaterMark()](https://nodejs.org/docs/latest-v20.x/api/stream.html#streamgetdefaulthighwatermarkobjectmode).
+```
+
+#### Since
+
+v18.17.0, v20.1.0
+
+#### Inherited from
+
+`ServerOpts.highWaterMark`
+
+#### Defined in
+
+node\_modules/.pnpm/@types+node@20.16.12/node\_modules/@types/node/net.d.ts:540
+
+***
+
+### keepAlive?
+
+> `optional` **keepAlive**: `boolean`
 
 If set to `true`, it enables keep-alive functionality on the socket immediately after a new incoming connection is received,
 similarly on what is done in `socket.setKeepAlive([enable][, initialDelay])`.
 
-**`Default`**
+#### Default
 
 ```ts
 false
 ```
 
-**`Since`**
+#### Since
 
 v16.5.0
 
 #### Inherited from
 
-ServerOpts.keepAlive
+`ServerOpts.keepAlive`
 
 #### Defined in
 
-node_modules/.pnpm/@types+node@20.14.2/node_modules/@types/node/net.d.ts:528
+node\_modules/.pnpm/@types+node@20.16.12/node\_modules/@types/node/net.d.ts:528
 
-node_modules/.pnpm/@types+node@20.14.9/node_modules/@types/node/net.d.ts:528
+***
 
-___
+### keepAliveInitialDelay?
 
-### keepAliveInitialDelay
-
-• `Optional` **keepAliveInitialDelay**: `number`
+> `optional` **keepAliveInitialDelay**: `number`
 
 If set to a positive number, it sets the initial delay before the first keepalive probe is sent on an idle socket.
 
-**`Default`**
+#### Default
 
 ```ts
 0
 ```
 
-**`Since`**
+#### Since
 
 v16.5.0
 
 #### Inherited from
 
-ServerOpts.keepAliveInitialDelay
+`ServerOpts.keepAliveInitialDelay`
 
 #### Defined in
 
-node_modules/.pnpm/@types+node@20.14.2/node_modules/@types/node/net.d.ts:534
+node\_modules/.pnpm/@types+node@20.16.12/node\_modules/@types/node/net.d.ts:534
 
-node_modules/.pnpm/@types+node@20.14.9/node_modules/@types/node/net.d.ts:534
+***
 
-___
+### listenOptions?
 
-### listenOptions
-
-• `Optional` **listenOptions**: `Omit`\<`ListenOptions`, ``"path"`` \| ``"port"``\>
+> `optional` **listenOptions**: `Omit`\<`ListenOptions`, `"path"` \| `"port"`\>
 
 #### Defined in
 
-[packages/ipc-server/src/server.ts:25](https://github.com/isdk/ipc-server.js/blob/e240e4395923d3d90123c33159fd9e4a3e252a28/src/server.ts#L25)
+[packages/ipc-server/src/server.ts:25](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/server.ts#L25)
 
-___
+***
 
-### max
+### max?
 
-• `Optional` **max**: `number`
+> `optional` **max**: `number`
 
 #### Defined in
 
-[packages/ipc-server/src/server.ts:23](https://github.com/isdk/ipc-server.js/blob/e240e4395923d3d90123c33159fd9e4a3e252a28/src/server.ts#L23)
+[packages/ipc-server/src/server.ts:23](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/server.ts#L23)
 
-___
+***
 
-### noDelay
+### noDelay?
 
-• `Optional` **noDelay**: `boolean`
+> `optional` **noDelay**: `boolean`
 
 If set to `true`, it disables the use of Nagle's algorithm immediately after a new incoming connection is received.
 
-**`Default`**
+#### Default
 
 ```ts
 false
 ```
 
-**`Since`**
+#### Since
 
 v16.5.0
 
 #### Inherited from
 
-ServerOpts.noDelay
+`ServerOpts.noDelay`
 
 #### Defined in
 
-node_modules/.pnpm/@types+node@20.14.2/node_modules/@types/node/net.d.ts:521
+node\_modules/.pnpm/@types+node@20.16.12/node\_modules/@types/node/net.d.ts:521
 
-node_modules/.pnpm/@types+node@20.14.9/node_modules/@types/node/net.d.ts:521
+***
 
-___
+### path?
 
-### path
-
-• `Optional` **path**: `string`
+> `optional` **path**: `string`
 
 #### Defined in
 
-[packages/ipc-server/src/server.ts:20](https://github.com/isdk/ipc-server.js/blob/e240e4395923d3d90123c33159fd9e4a3e252a28/src/server.ts#L20)
+[packages/ipc-server/src/server.ts:20](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/server.ts#L20)
 
-___
+***
 
-### pauseOnConnect
+### pauseOnConnect?
 
-• `Optional` **pauseOnConnect**: `boolean`
+> `optional` **pauseOnConnect**: `boolean`
 
 Indicates whether the socket should be paused on incoming connections.
 
-**`Default`**
+#### Default
 
 ```ts
 false
@@ -194,40 +197,38 @@ false
 
 #### Inherited from
 
-ServerOpts.pauseOnConnect
+`ServerOpts.pauseOnConnect`
 
 #### Defined in
 
-node_modules/.pnpm/@types+node@20.14.2/node_modules/@types/node/net.d.ts:515
+node\_modules/.pnpm/@types+node@20.16.12/node\_modules/@types/node/net.d.ts:515
 
-node_modules/.pnpm/@types+node@20.14.9/node_modules/@types/node/net.d.ts:515
+***
 
-___
+### port?
 
-### port
-
-• `Optional` **port**: `number`
+> `optional` **port**: `number`
 
 #### Defined in
 
-[packages/ipc-server/src/server.ts:21](https://github.com/isdk/ipc-server.js/blob/e240e4395923d3d90123c33159fd9e4a3e252a28/src/server.ts#L21)
+[packages/ipc-server/src/server.ts:21](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/server.ts#L21)
 
-___
+***
 
-### retries
+### retries?
 
-• `Optional` **retries**: `number`
-
-#### Defined in
-
-[packages/ipc-server/src/server.ts:24](https://github.com/isdk/ipc-server.js/blob/e240e4395923d3d90123c33159fd9e4a3e252a28/src/server.ts#L24)
-
-___
-
-### tls
-
-• `Optional` **tls**: `boolean`
+> `optional` **retries**: `number`
 
 #### Defined in
 
-[packages/ipc-server/src/server.ts:22](https://github.com/isdk/ipc-server.js/blob/e240e4395923d3d90123c33159fd9e4a3e252a28/src/server.ts#L22)
+[packages/ipc-server/src/server.ts:24](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/server.ts#L24)
+
+***
+
+### tls?
+
+> `optional` **tls**: `boolean`
+
+#### Defined in
+
+[packages/ipc-server/src/server.ts:22](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/server.ts#L22)
