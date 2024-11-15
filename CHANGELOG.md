@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.3.5](https://github.com/isdk/ipc-server.js/compare/v0.3.4...v0.3.5) (2024-11-15)
+
+
+### Features
+
+* add isReady prop to IPCServer ([64a46f7](https://github.com/isdk/ipc-server.js/commit/64a46f715f59f19fdab332a9cff994e930e96d0d))
+
 ## [0.3.4](https://github.com/isdk/ipc-server.js/compare/v0.3.3...v0.3.4) (2024-09-10)
 
 
