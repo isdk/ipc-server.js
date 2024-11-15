@@ -31,6 +31,7 @@ export class IPCServer extends EventEmitter {
   server: net.Server | undefined;
   connections: IPCConnection[] = [];
   subscriptions: {[event: string]: IPCConnection[]} = {}
+  isReady: boolean = false;
 
   constructor(public options: Partial<IPCServerOptions> = {}) {
     super()
@@ -123,6 +124,7 @@ export class IPCServer extends EventEmitter {
     if (address && typeof address === "object") {
       address = `${address.address}:${address.port}`;
     }
+    this.isReady = true
     this.emit(IPCEvents.READY, address);
   }
 
@@ -133,6 +135,7 @@ export class IPCServer extends EventEmitter {
   }
 
   _onClose(): void {
+    this.isReady = false
     this.server?.removeAllListeners();
     this.server = undefined;
     this.emit(IPCEvents.CLOSE);
