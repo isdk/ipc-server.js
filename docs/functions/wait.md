@@ -1,4 +1,4 @@
-[**@isdk/ipc-server**](../README.md) • **Docs**
+[**@isdk/ipc-server**](../README.md)
 
 ***
 
@@ -8,14 +8,14 @@
 
 > **wait**(`ms`): `Promise`\<`unknown`\>
 
+Defined in: [packages/ipc-server/src/base-connection.ts:326](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L326)
+
 ## Parameters
 
-• **ms**: `number`
+### ms
+
+`number`
 
 ## Returns
 
 `Promise`\<`unknown`\>
-
-## Defined in
-
-[packages/ipc-server/src/base-connection.ts:326](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L326)

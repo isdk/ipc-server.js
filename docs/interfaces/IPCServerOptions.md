@@ -1,4 +1,4 @@
-[**@isdk/ipc-server**](../README.md) • **Docs**
+[**@isdk/ipc-server**](../README.md)
 
 ***
 
@@ -6,19 +6,23 @@
 
 # Interface: IPCServerOptions
 
+Defined in: [packages/ipc-server/src/server.ts:19](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/server.ts#L19)
+
 ## Extends
 
 - `ServerOpts`
 
 ## Indexable
 
- \[`name`: `string`\]: `any`
+\[`name`: `string`\]: `any`
 
 ## Properties
 
 ### allowHalfOpen?
 
 > `optional` **allowHalfOpen**: `boolean`
+
+Defined in: node\_modules/.pnpm/@types+node@22.13.10/node\_modules/@types/node/net.d.ts:508
 
 Indicates whether half-opened TCP connections are allowed.
 
@@ -32,9 +36,27 @@ false
 
 `ServerOpts.allowHalfOpen`
 
-#### Defined in
+***
 
-node\_modules/.pnpm/@types+node@20.16.12/node\_modules/@types/node/net.d.ts:510
+### blockList?
+
+> `optional` **blockList**: `BlockList`
+
+Defined in: node\_modules/.pnpm/@types+node@22.13.10/node\_modules/@types/node/net.d.ts:547
+
+`blockList` can be used for disabling inbound
+access to specific IP addresses, IP ranges, or IP subnets. This does not
+work if the server is behind a reverse proxy, NAT, etc. because the address
+checked against the block list is the address of the proxy, or the one
+specified by the NAT.
+
+#### Since
+
+v22.13.0
+
+#### Inherited from
+
+`ServerOpts.blockList`
 
 ***
 
@@ -42,9 +64,7 @@ node\_modules/.pnpm/@types+node@20.16.12/node\_modules/@types/node/net.d.ts:510
 
 > `optional` **generateID**: `GenIdFunc`
 
-#### Defined in
-
-[packages/ipc-server/src/server.ts:26](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/server.ts#L26)
+Defined in: [packages/ipc-server/src/server.ts:26](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/server.ts#L26)
 
 ***
 
@@ -52,12 +72,14 @@ node\_modules/.pnpm/@types+node@20.16.12/node\_modules/@types/node/net.d.ts:510
 
 > `optional` **highWaterMark**: `number`
 
+Defined in: node\_modules/.pnpm/@types+node@22.13.10/node\_modules/@types/node/net.d.ts:538
+
 Optionally overrides all `net.Socket`s' `readableHighWaterMark` and `writableHighWaterMark`.
 
 #### Default
 
 ```ts
-See [stream.getDefaultHighWaterMark()](https://nodejs.org/docs/latest-v20.x/api/stream.html#streamgetdefaulthighwatermarkobjectmode).
+See [stream.getDefaultHighWaterMark()](https://nodejs.org/docs/latest-v22.x/api/stream.html#streamgetdefaulthighwatermarkobjectmode).
 ```
 
 #### Since
@@ -68,15 +90,13 @@ v18.17.0, v20.1.0
 
 `ServerOpts.highWaterMark`
 
-#### Defined in
-
-node\_modules/.pnpm/@types+node@20.16.12/node\_modules/@types/node/net.d.ts:540
-
 ***
 
 ### keepAlive?
 
 > `optional` **keepAlive**: `boolean`
+
+Defined in: node\_modules/.pnpm/@types+node@22.13.10/node\_modules/@types/node/net.d.ts:526
 
 If set to `true`, it enables keep-alive functionality on the socket immediately after a new incoming connection is received,
 similarly on what is done in `socket.setKeepAlive([enable][, initialDelay])`.
@@ -95,15 +115,13 @@ v16.5.0
 
 `ServerOpts.keepAlive`
 
-#### Defined in
-
-node\_modules/.pnpm/@types+node@20.16.12/node\_modules/@types/node/net.d.ts:528
-
 ***
 
 ### keepAliveInitialDelay?
 
 > `optional` **keepAliveInitialDelay**: `number`
+
+Defined in: node\_modules/.pnpm/@types+node@22.13.10/node\_modules/@types/node/net.d.ts:532
 
 If set to a positive number, it sets the initial delay before the first keepalive probe is sent on an idle socket.
 
@@ -121,19 +139,13 @@ v16.5.0
 
 `ServerOpts.keepAliveInitialDelay`
 
-#### Defined in
-
-node\_modules/.pnpm/@types+node@20.16.12/node\_modules/@types/node/net.d.ts:534
-
 ***
 
 ### listenOptions?
 
 > `optional` **listenOptions**: `Omit`\<`ListenOptions`, `"path"` \| `"port"`\>
 
-#### Defined in
-
-[packages/ipc-server/src/server.ts:25](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/server.ts#L25)
+Defined in: [packages/ipc-server/src/server.ts:25](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/server.ts#L25)
 
 ***
 
@@ -141,15 +153,15 @@ node\_modules/.pnpm/@types+node@20.16.12/node\_modules/@types/node/net.d.ts:534
 
 > `optional` **max**: `number`
 
-#### Defined in
-
-[packages/ipc-server/src/server.ts:23](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/server.ts#L23)
+Defined in: [packages/ipc-server/src/server.ts:23](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/server.ts#L23)
 
 ***
 
 ### noDelay?
 
 > `optional` **noDelay**: `boolean`
+
+Defined in: node\_modules/.pnpm/@types+node@22.13.10/node\_modules/@types/node/net.d.ts:519
 
 If set to `true`, it disables the use of Nagle's algorithm immediately after a new incoming connection is received.
 
@@ -167,25 +179,21 @@ v16.5.0
 
 `ServerOpts.noDelay`
 
-#### Defined in
-
-node\_modules/.pnpm/@types+node@20.16.12/node\_modules/@types/node/net.d.ts:521
-
 ***
 
 ### path?
 
 > `optional` **path**: `string`
 
-#### Defined in
-
-[packages/ipc-server/src/server.ts:20](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/server.ts#L20)
+Defined in: [packages/ipc-server/src/server.ts:20](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/server.ts#L20)
 
 ***
 
 ### pauseOnConnect?
 
 > `optional` **pauseOnConnect**: `boolean`
+
+Defined in: node\_modules/.pnpm/@types+node@22.13.10/node\_modules/@types/node/net.d.ts:513
 
 Indicates whether the socket should be paused on incoming connections.
 
@@ -199,19 +207,13 @@ false
 
 `ServerOpts.pauseOnConnect`
 
-#### Defined in
-
-node\_modules/.pnpm/@types+node@20.16.12/node\_modules/@types/node/net.d.ts:515
-
 ***
 
 ### port?
 
 > `optional` **port**: `number`
 
-#### Defined in
-
-[packages/ipc-server/src/server.ts:21](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/server.ts#L21)
+Defined in: [packages/ipc-server/src/server.ts:21](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/server.ts#L21)
 
 ***
 
@@ -219,9 +221,7 @@ node\_modules/.pnpm/@types+node@20.16.12/node\_modules/@types/node/net.d.ts:515
 
 > `optional` **retries**: `number`
 
-#### Defined in
-
-[packages/ipc-server/src/server.ts:24](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/server.ts#L24)
+Defined in: [packages/ipc-server/src/server.ts:24](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/server.ts#L24)
 
 ***
 
@@ -229,6 +229,4 @@ node\_modules/.pnpm/@types+node@20.16.12/node\_modules/@types/node/net.d.ts:515
 
 > `optional` **tls**: `boolean`
 
-#### Defined in
-
-[packages/ipc-server/src/server.ts:22](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/server.ts#L22)
+Defined in: [packages/ipc-server/src/server.ts:22](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/server.ts#L22)

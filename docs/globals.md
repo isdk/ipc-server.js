@@ -1,4 +1,4 @@
-[**@isdk/ipc-server**](README.md) • **Docs**
+[**@isdk/ipc-server**](README.md)
 
 ***
 

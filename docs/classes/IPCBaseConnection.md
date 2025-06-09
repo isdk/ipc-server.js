@@ -1,10 +1,12 @@
-[**@isdk/ipc-server**](../README.md) • **Docs**
+[**@isdk/ipc-server**](../README.md)
 
 ***
 
 [@isdk/ipc-server](../globals.md) / IPCBaseConnection
 
 # Class: `abstract` IPCBaseConnection
+
+Defined in: [packages/ipc-server/src/base-connection.ts:60](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L60)
 
 ## Extends
 
@@ -29,11 +31,9 @@
 
 ### \_buffer
 
-> **\_buffer**: `Buffer`[] = `[]`
+> **\_buffer**: `Buffer`\<`ArrayBufferLike`\>[] = `[]`
 
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:73](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L73)
+Defined in: [packages/ipc-server/src/base-connection.ts:73](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L73)
 
 ***
 
@@ -41,9 +41,7 @@
 
 > **\_bufferTotalLength**: `number` = `0`
 
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:74](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L74)
+Defined in: [packages/ipc-server/src/base-connection.ts:74](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L74)
 
 ***
 
@@ -51,9 +49,7 @@
 
 > **\_closed**: `boolean`
 
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:67](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L67)
+Defined in: [packages/ipc-server/src/base-connection.ts:67](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L67)
 
 ***
 
@@ -61,9 +57,7 @@
 
 > **\_drainQueue**: `PromiseEx`\<`any`\>[] = `[]`
 
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:77](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L77)
+Defined in: [packages/ipc-server/src/base-connection.ts:77](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L77)
 
 ***
 
@@ -71,9 +65,7 @@
 
 > **\_end**: `any`
 
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:70](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L70)
+Defined in: [packages/ipc-server/src/base-connection.ts:70](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L70)
 
 ***
 
@@ -81,9 +73,7 @@
 
 > **\_error**: `undefined` \| `Error`
 
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:69](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L69)
+Defined in: [packages/ipc-server/src/base-connection.ts:69](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L69)
 
 ***
 
@@ -91,9 +81,7 @@
 
 > **\_requests**: `any` = `{}`
 
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:76](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L76)
+Defined in: [packages/ipc-server/src/base-connection.ts:76](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L76)
 
 ***
 
@@ -101,9 +89,7 @@
 
 > **\_subscriptions**: `string`[] = `[]`
 
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:72](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L72)
+Defined in: [packages/ipc-server/src/base-connection.ts:72](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L72)
 
 ***
 
@@ -111,9 +97,7 @@
 
 > **id**: `string`
 
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:66](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L66)
+Defined in: [packages/ipc-server/src/base-connection.ts:66](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L66)
 
 ***
 
@@ -121,9 +105,7 @@
 
 > **socket**: `undefined` \| `Socket`
 
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:68](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L68)
+Defined in: [packages/ipc-server/src/base-connection.ts:68](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L68)
 
 ***
 
@@ -131,9 +113,7 @@
 
 > `static` **defaultMaxListeners**: `number`
 
-#### Defined in
-
-node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.ts:7
+Defined in: node\_modules/.pnpm/events-ex@2.1.0/node\_modules/events-ex/lib/event-emitter.d.ts:7
 
 ## Methods
 
@@ -141,13 +121,11 @@ node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.
 
 > **\_drain**(): `void`
 
+Defined in: [packages/ipc-server/src/base-connection.ts:317](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L317)
+
 #### Returns
 
 `void`
-
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:317](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L317)
 
 ***
 
@@ -155,13 +133,11 @@ node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.
 
 > **\_nonce**(): `string`
 
+Defined in: [packages/ipc-server/src/base-connection.ts:173](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L173)
+
 #### Returns
 
 `string`
-
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:173](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L173)
 
 ***
 
@@ -169,31 +145,29 @@ node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.
 
 > **\_onClose**(): `void`
 
+Defined in: [packages/ipc-server/src/base-connection.ts:163](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L163)
+
 #### Returns
 
 `void`
-
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:163](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L163)
 
 ***
 
 ### \_pack()
 
-> **\_pack**(`packetData`): `Buffer`
+> **\_pack**(`packetData`): `Buffer`\<`ArrayBuffer`\>
+
+Defined in: [packages/ipc-server/src/base-connection.ts:275](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L275)
 
 #### Parameters
 
-• **packetData**: [`IPCPacketType`](../interfaces/IPCPacketType.md)
+##### packetData
+
+[`IPCPacketType`](../interfaces/IPCPacketType.md)
 
 #### Returns
 
-`Buffer`
-
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:275](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L275)
+`Buffer`\<`ArrayBuffer`\>
 
 ***
 
@@ -201,17 +175,17 @@ node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.
 
 > `abstract` **\_parse**(`packet`): `void`
 
+Defined in: [packages/ipc-server/src/base-connection.ts:80](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L80)
+
 #### Parameters
 
-• **packet**: [`IPCPacketType`](../interfaces/IPCPacketType.md)
+##### packet
+
+[`IPCPacketType`](../interfaces/IPCPacketType.md)
 
 #### Returns
 
 `void`
-
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:80](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L80)
 
 ***
 
@@ -219,17 +193,17 @@ node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.
 
 > **\_processBuffer**(`socket`): `void`
 
+Defined in: [packages/ipc-server/src/base-connection.ts:195](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L195)
+
 #### Parameters
 
-• **socket**: `Socket` = `...`
+##### socket
+
+`Socket` = `...`
 
 #### Returns
 
 `void`
-
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:195](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L195)
 
 ***
 
@@ -237,31 +211,29 @@ node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.
 
 > **\_read**(): `void`
 
+Defined in: [packages/ipc-server/src/base-connection.ts:187](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L187)
+
 #### Returns
 
 `void`
-
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:187](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L187)
 
 ***
 
 ### \_readFromBuffer()
 
-> **\_readFromBuffer**(`length`): `undefined` \| `Buffer`
+> **\_readFromBuffer**(`length`): `undefined` \| `Buffer`\<`ArrayBufferLike`\>
+
+Defined in: [packages/ipc-server/src/base-connection.ts:212](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L212)
 
 #### Parameters
 
-• **length**: `number`
+##### length
+
+`number`
 
 #### Returns
 
-`undefined` \| `Buffer`
-
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:212](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L212)
+`undefined` \| `Buffer`\<`ArrayBufferLike`\>
 
 ***
 
@@ -269,17 +241,17 @@ node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.
 
 > **\_readToBuffer**(`socket`): `void`
 
+Defined in: [packages/ipc-server/src/base-connection.ts:177](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L177)
+
 #### Parameters
 
-• **socket**: `Socket` = `...`
+##### socket
+
+`Socket` = `...`
 
 #### Returns
 
 `void`
-
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:177](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L177)
 
 ***
 
@@ -287,17 +259,17 @@ node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.
 
 > **\_tag**(`_size`): `number`[]
 
+Defined in: [packages/ipc-server/src/base-connection.ts:285](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L285)
+
 #### Parameters
 
-• **\_size**: `number`
+##### \_size
+
+`number`
 
 #### Returns
 
 `number`[]
-
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:285](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L285)
 
 ***
 
@@ -305,21 +277,25 @@ node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.
 
 > `abstract` **\_tryWrite**(`op`, `data`?, `nonce`?): `Promise`\<`void` \| `Boolean` \| `Error`\>
 
+Defined in: [packages/ipc-server/src/base-connection.ts:79](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L79)
+
 #### Parameters
 
-• **op**: [`IPCMessageType`](../enumerations/IPCMessageType.md)
+##### op
 
-• **data?**: `any`
+[`IPCMessageType`](../enumerations/IPCMessageType.md)
 
-• **nonce?**: `string`
+##### data?
+
+`any`
+
+##### nonce?
+
+`string`
 
 #### Returns
 
 `Promise`\<`void` \| `Boolean` \| `Error`\>
-
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:79](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L79)
 
 ***
 
@@ -327,21 +303,25 @@ node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.
 
 > **\_write**(`op`, `data`?, `nonce`?): `PromiseEx`\<`any`\> \| `Promise`\<`true`\>
 
+Defined in: [packages/ipc-server/src/base-connection.ts:245](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L245)
+
 #### Parameters
 
-• **op**: [`IPCMessageType`](../enumerations/IPCMessageType.md)
+##### op
 
-• **data?**: `any`
+[`IPCMessageType`](../enumerations/IPCMessageType.md)
 
-• **nonce?**: `string`
+##### data?
+
+`any`
+
+##### nonce?
+
+`string`
 
 #### Returns
 
 `PromiseEx`\<`any`\> \| `Promise`\<`true`\>
-
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:245](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L245)
 
 ***
 
@@ -349,19 +329,21 @@ node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.
 
 > **close**(`data`?, `allowReconnect`?): `Promise`\<`boolean`\>
 
+Defined in: [packages/ipc-server/src/base-connection.ts:130](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L130)
+
 #### Parameters
 
-• **data?**: `any`
+##### data?
 
-• **allowReconnect?**: `boolean` = `false`
+`any`
+
+##### allowReconnect?
+
+`boolean` = `false`
 
 #### Returns
 
 `Promise`\<`boolean`\>
-
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:130](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L130)
 
 ***
 
@@ -369,17 +351,17 @@ node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.
 
 > **destroy**(`reason`?): `boolean`
 
+Defined in: [packages/ipc-server/src/base-connection.ts:149](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L149)
+
 #### Parameters
 
-• **reason?**: `string` \| `Error`
+##### reason?
+
+`string` | `Error`
 
 #### Returns
 
 `boolean`
-
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:149](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L149)
 
 ***
 
@@ -387,13 +369,19 @@ node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.
 
 > **emit**(`eventName`, ...`args`): `any`
 
+Defined in: node\_modules/.pnpm/events-ex@2.1.0/node\_modules/events-ex/lib/event-emitter.d.ts:38
+
 Emits the specified event type with the given arguments.
 
 #### Parameters
 
-• **eventName**: `string`
+##### eventName
 
-• ...**args**: `any`[]
+`string`
+
+##### args
+
+...`any`[]
 
 The event type followed by any number of arguments to be passed to the listener functions.
 
@@ -403,23 +391,25 @@ The event type followed by any number of arguments to be passed to the listener 
 
 The result of the event.
 
-#### Defined in
-
-node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.ts:38
-
 ***
 
 ### emitAsync()
 
 > **emitAsync**(`eventName`, ...`args`): `Promise`\<`any`\>
 
+Defined in: node\_modules/.pnpm/events-ex@2.1.0/node\_modules/events-ex/lib/event-emitter.d.ts:44
+
 Asynchronously emits the specified event type with the given arguments.
 
 #### Parameters
 
-• **eventName**: `string`
+##### eventName
 
-• ...**args**: `any`[]
+`string`
+
+##### args
+
+...`any`[]
 
 The event type followed by any number of arguments to be passed to the listener functions.
 
@@ -429,23 +419,23 @@ The event type followed by any number of arguments to be passed to the listener 
 
 A promise that resolves with the result of the event.
 
-#### Defined in
-
-node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.ts:44
-
 ***
 
 ### listenerCount()
 
 > **listenerCount**(`eventName`): `number`
 
+Defined in: node\_modules/.pnpm/events-ex@2.1.0/node\_modules/events-ex/lib/event-emitter.d.ts:66
+
 Returns the count of listeners that are registered to listen for the specified event.
 
 #### Parameters
 
-• **eventName**: `string` \| `RegExp`
+##### eventName
 
 The name of the event to get the listeners for.
+
+`string` | `RegExp`
 
 #### Returns
 
@@ -453,23 +443,23 @@ The name of the event to get the listeners for.
 
 - the listeners count
 
-#### Defined in
-
-node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.ts:66
-
 ***
 
 ### listeners()
 
 > **listeners**(`eventName`): `Function`[]
 
+Defined in: node\_modules/.pnpm/events-ex@2.1.0/node\_modules/events-ex/lib/event-emitter.d.ts:59
+
 Returns an array of functions that are registered to listen for the specified event.
 
 #### Parameters
 
-• **eventName**: `string` \| `RegExp`
+##### eventName
 
 The name of the event to get the listeners for.
+
+`string` | `RegExp`
 
 #### Returns
 
@@ -477,23 +467,25 @@ The name of the event to get the listeners for.
 
 - An array of functions that are registered to listen for the specified event.
 
-#### Defined in
-
-node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.ts:59
-
 ***
 
 ### off()
 
 > **off**(`eventName`, `listener`): `EventEmitter`
 
+Defined in: node\_modules/.pnpm/events-ex@2.1.0/node\_modules/events-ex/lib/event-emitter.d.ts:32
+
 Removes a listener function from the specified event type.
 
 #### Parameters
 
-• **eventName**: `string` \| `RegExp`
+##### eventName
 
-• **listener**: `Function`
+`string` | `RegExp`
+
+##### listener
+
+`Function`
 
 The listener function to be removed.
 
@@ -507,23 +499,25 @@ The EventEmitter instance to allow chaining.
 
 If the listener is not a function.
 
-#### Defined in
-
-node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.ts:32
-
 ***
 
 ### on()
 
 > **on**(`eventName`, `listener`): `EventEmitter`
 
+Defined in: node\_modules/.pnpm/events-ex@2.1.0/node\_modules/events-ex/lib/event-emitter.d.ts:16
+
 Adds a listener function to the specified event type.
 
 #### Parameters
 
-• **eventName**: `string` \| `RegExp`
+##### eventName
 
-• **listener**: `Function`
+`string` | `RegExp`
+
+##### listener
+
+`Function`
 
 The listener function to be called when the event is emitted.
 
@@ -537,23 +531,25 @@ The EventEmitter instance to allow chaining.
 
 If the listener is not a function.
 
-#### Defined in
-
-node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.ts:16
-
 ***
 
 ### once()
 
 > **once**(`eventName`, `listener`): `EventEmitter`
 
+Defined in: node\_modules/.pnpm/events-ex@2.1.0/node\_modules/events-ex/lib/event-emitter.d.ts:24
+
 Adds a one-time listener function to the specified event type.
 
 #### Parameters
 
-• **eventName**: `string` \| `RegExp`
+##### eventName
 
-• **listener**: `Function`
+`string` | `RegExp`
+
+##### listener
+
+`Function`
 
 The listener function to be called once when the event is emitted.
 
@@ -567,29 +563,27 @@ The EventEmitter instance to allow chaining.
 
 If the listener is not a function.
 
-#### Defined in
-
-node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.ts:24
-
 ***
 
 ### ping()
 
 > **ping**(`data`?, `timeout`?): `Promise`\<`unknown`\>
 
+Defined in: [packages/ipc-server/src/base-connection.ts:126](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L126)
+
 #### Parameters
 
-• **data?**: `any`
+##### data?
 
-• **timeout?**: `number` = `DEFAULT_TIMEOUT`
+`any`
+
+##### timeout?
+
+`number` = `DEFAULT_TIMEOUT`
 
 #### Returns
 
 `Promise`\<`unknown`\>
-
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:126](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L126)
 
 ***
 
@@ -597,39 +591,43 @@ node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.
 
 > **publish**(`event`, `message`, `timeout`): `Promise`\<`boolean`\>
 
+Defined in: [packages/ipc-server/src/base-connection.ts:114](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L114)
+
 #### Parameters
 
-• **event**: `string`
+##### event
 
-• **message**: `any`
+`string`
 
-• **timeout**: `number` = `DEFAULT_TIMEOUT`
+##### message
+
+`any`
+
+##### timeout
+
+`number` = `DEFAULT_TIMEOUT`
 
 #### Returns
 
 `Promise`\<`boolean`\>
 
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:114](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L114)
-
 ***
 
 ### readBuffer()
 
-> **readBuffer**(`size`?): `undefined` \| `Buffer`
+> **readBuffer**(`size`?): `undefined` \| `Buffer`\<`ArrayBufferLike`\>
+
+Defined in: [packages/ipc-server/src/base-connection.ts:237](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L237)
 
 #### Parameters
 
-• **size?**: `number`
+##### size?
+
+`number`
 
 #### Returns
 
-`undefined` \| `Buffer`
-
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:237](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L237)
+`undefined` \| `Buffer`\<`ArrayBufferLike`\>
 
 ***
 
@@ -637,13 +635,17 @@ node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.
 
 > **removeAllListeners**(`eventName`?): `EventEmitter`
 
+Defined in: node\_modules/.pnpm/events-ex@2.1.0/node\_modules/events-ex/lib/event-emitter.d.ts:51
+
 Removes all listeners for a specific event or all events from an event emitter.
 
 #### Parameters
 
-• **eventName?**: `string` \| `RegExp`
+##### eventName?
 
 The event to remove listeners for. If not provided, all listeners for all events will be removed.
+
+`string` | `RegExp`
 
 #### Returns
 
@@ -651,29 +653,27 @@ The event to remove listeners for. If not provided, all listeners for all events
 
 - The event emitter with all listeners removed.
 
-#### Defined in
-
-node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.ts:51
-
 ***
 
 ### request()
 
 > **request**(`data`?, `timeout`?): `Promise`\<`unknown`\>
 
+Defined in: [packages/ipc-server/src/base-connection.ts:110](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L110)
+
 #### Parameters
 
-• **data?**: `any`
+##### data?
 
-• **timeout?**: `number` = `DEFAULT_TIMEOUT`
+`any`
+
+##### timeout?
+
+`number` = `DEFAULT_TIMEOUT`
 
 #### Returns
 
 `Promise`\<`unknown`\>
-
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:110](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L110)
 
 ***
 
@@ -681,17 +681,17 @@ node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.
 
 > **send**(`data`): `Promise`\<`void` \| `Boolean` \| `Error`\>
 
+Defined in: [packages/ipc-server/src/base-connection.ts:82](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L82)
+
 #### Parameters
 
-• **data**: `any`
+##### data
+
+`any`
 
 #### Returns
 
 `Promise`\<`void` \| `Boolean` \| `Error`\>
-
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:82](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L82)
 
 ***
 
@@ -699,21 +699,25 @@ node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.
 
 > **sendByType**(`op`, `data`?, `timeout`?): `Promise`\<`unknown`\>
 
+Defined in: [packages/ipc-server/src/base-connection.ts:86](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L86)
+
 #### Parameters
 
-• **op**: [`IPCMessageType`](../enumerations/IPCMessageType.md)
+##### op
 
-• **data?**: `any`
+[`IPCMessageType`](../enumerations/IPCMessageType.md)
 
-• **timeout?**: `number` = `DEFAULT_TIMEOUT`
+##### data?
+
+`any`
+
+##### timeout?
+
+`number` = `DEFAULT_TIMEOUT`
 
 #### Returns
 
 `Promise`\<`unknown`\>
-
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:86](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L86)
 
 ***
 
@@ -721,17 +725,17 @@ node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.
 
 > **setMaxListeners**(`n`): `EventEmitter`
 
+Defined in: node\_modules/.pnpm/events-ex@2.1.0/node\_modules/events-ex/lib/event-emitter.d.ts:52
+
 #### Parameters
 
-• **n**: `number`
+##### n
+
+`number`
 
 #### Returns
 
 `EventEmitter`
-
-#### Defined in
-
-node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.ts:52
 
 ***
 
@@ -739,19 +743,21 @@ node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.
 
 > **subscribe**(`event`, `timeout`): `Promise`\<`boolean`\>
 
+Defined in: [packages/ipc-server/src/base-connection.ts:118](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L118)
+
 #### Parameters
 
-• **event**: `string` \| `string`[]
+##### event
 
-• **timeout**: `number` = `DEFAULT_TIMEOUT`
+`string` | `string`[]
+
+##### timeout
+
+`number` = `DEFAULT_TIMEOUT`
 
 #### Returns
 
 `Promise`\<`boolean`\>
-
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:118](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L118)
 
 ***
 
@@ -759,19 +765,21 @@ node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.
 
 > **unsubscribe**(`event`, `timeout`): `Promise`\<`boolean`\>
 
+Defined in: [packages/ipc-server/src/base-connection.ts:122](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L122)
+
 #### Parameters
 
-• **event**: `string` \| `string`[]
+##### event
 
-• **timeout**: `number` = `DEFAULT_TIMEOUT`
+`string` | `string`[]
+
+##### timeout
+
+`number` = `DEFAULT_TIMEOUT`
 
 #### Returns
 
 `Promise`\<`boolean`\>
-
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:122](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L122)
 
 ***
 
@@ -779,13 +787,19 @@ node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.
 
 > `static` **listenerCount**(`emitter`, `eventName`): `number`
 
+Defined in: node\_modules/.pnpm/events-ex@2.1.0/node\_modules/events-ex/lib/event-emitter.d.ts:74
+
 Returns the count of listeners that are registered to listen for the specified event.
 
 #### Parameters
 
-• **emitter**: `EventEmitter`
+##### emitter
 
-• **eventName**: `string` \| `RegExp`
+`EventEmitter`
+
+##### eventName
+
+`string` | `RegExp`
 
 #### Returns
 
@@ -794,7 +808,3 @@ Returns the count of listeners that are registered to listen for the specified e
 #### Deprecated
 
 use emitter.listenerCount instead
-
-#### Defined in
-
-node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.ts:74

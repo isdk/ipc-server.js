@@ -1,10 +1,12 @@
-[**@isdk/ipc-server**](../README.md) • **Docs**
+[**@isdk/ipc-server**](../README.md)
 
 ***
 
 [@isdk/ipc-server](../globals.md) / IPCConnection
 
 # Class: IPCConnection
+
+Defined in: [packages/ipc-server/src/connection.ts:8](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/connection.ts#L8)
 
 ## Extends
 
@@ -16,11 +18,17 @@
 
 > **new IPCConnection**(`socket`, `server`): [`IPCConnection`](IPCConnection.md)
 
+Defined in: [packages/ipc-server/src/connection.ts:13](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/connection.ts#L13)
+
 #### Parameters
 
-• **socket**: `Socket`
+##### socket
 
-• **server**: [`IPCServer`](IPCServer.md)
+`Socket`
+
+##### server
+
+[`IPCServer`](IPCServer.md)
 
 #### Returns
 
@@ -30,23 +38,17 @@
 
 [`IPCBaseConnection`](IPCBaseConnection.md).[`constructor`](IPCBaseConnection.md#constructors)
 
-#### Defined in
-
-[packages/ipc-server/src/connection.ts:13](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/connection.ts#L13)
-
 ## Properties
 
 ### \_buffer
 
-> **\_buffer**: `Buffer`[] = `[]`
+> **\_buffer**: `Buffer`\<`ArrayBufferLike`\>[] = `[]`
+
+Defined in: [packages/ipc-server/src/base-connection.ts:73](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L73)
 
 #### Inherited from
 
 [`IPCBaseConnection`](IPCBaseConnection.md).[`_buffer`](IPCBaseConnection.md#_buffer)
-
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:73](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L73)
 
 ***
 
@@ -54,13 +56,11 @@
 
 > **\_bufferTotalLength**: `number` = `0`
 
+Defined in: [packages/ipc-server/src/base-connection.ts:74](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L74)
+
 #### Inherited from
 
 [`IPCBaseConnection`](IPCBaseConnection.md).[`_bufferTotalLength`](IPCBaseConnection.md#_buffertotallength)
-
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:74](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L74)
 
 ***
 
@@ -68,13 +68,11 @@
 
 > **\_closed**: `boolean`
 
+Defined in: [packages/ipc-server/src/base-connection.ts:67](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L67)
+
 #### Inherited from
 
 [`IPCBaseConnection`](IPCBaseConnection.md).[`_closed`](IPCBaseConnection.md#_closed)
-
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:67](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L67)
 
 ***
 
@@ -82,13 +80,11 @@
 
 > **\_drainQueue**: `PromiseEx`\<`any`\>[] = `[]`
 
+Defined in: [packages/ipc-server/src/base-connection.ts:77](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L77)
+
 #### Inherited from
 
 [`IPCBaseConnection`](IPCBaseConnection.md).[`_drainQueue`](IPCBaseConnection.md#_drainqueue)
-
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:77](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L77)
 
 ***
 
@@ -96,13 +92,11 @@
 
 > **\_end**: `any`
 
+Defined in: [packages/ipc-server/src/base-connection.ts:70](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L70)
+
 #### Inherited from
 
 [`IPCBaseConnection`](IPCBaseConnection.md).[`_end`](IPCBaseConnection.md#_end)
-
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:70](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L70)
 
 ***
 
@@ -110,13 +104,11 @@
 
 > **\_error**: `undefined` \| `Error`
 
+Defined in: [packages/ipc-server/src/base-connection.ts:69](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L69)
+
 #### Inherited from
 
 [`IPCBaseConnection`](IPCBaseConnection.md).[`_error`](IPCBaseConnection.md#_error)
-
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:69](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L69)
 
 ***
 
@@ -124,13 +116,11 @@
 
 > **\_requests**: `any` = `{}`
 
+Defined in: [packages/ipc-server/src/base-connection.ts:76](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L76)
+
 #### Inherited from
 
 [`IPCBaseConnection`](IPCBaseConnection.md).[`_requests`](IPCBaseConnection.md#_requests)
-
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:76](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L76)
 
 ***
 
@@ -138,9 +128,7 @@
 
 > **\_retries**: `number`
 
-#### Defined in
-
-[packages/ipc-server/src/connection.ts:9](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/connection.ts#L9)
+Defined in: [packages/ipc-server/src/connection.ts:9](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/connection.ts#L9)
 
 ***
 
@@ -148,13 +136,11 @@
 
 > **\_subscriptions**: `string`[] = `[]`
 
+Defined in: [packages/ipc-server/src/base-connection.ts:72](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L72)
+
 #### Inherited from
 
 [`IPCBaseConnection`](IPCBaseConnection.md).[`_subscriptions`](IPCBaseConnection.md#_subscriptions)
-
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:72](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L72)
 
 ***
 
@@ -162,9 +148,7 @@
 
 > **connectedAt**: `number`
 
-#### Defined in
-
-[packages/ipc-server/src/connection.ts:11](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/connection.ts#L11)
+Defined in: [packages/ipc-server/src/connection.ts:11](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/connection.ts#L11)
 
 ***
 
@@ -172,13 +156,11 @@
 
 > **id**: `string`
 
+Defined in: [packages/ipc-server/src/base-connection.ts:66](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L66)
+
 #### Inherited from
 
 [`IPCBaseConnection`](IPCBaseConnection.md).[`id`](IPCBaseConnection.md#id)
-
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:66](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L66)
 
 ***
 
@@ -186,9 +168,7 @@
 
 > **server**: [`IPCServer`](IPCServer.md)
 
-#### Defined in
-
-[packages/ipc-server/src/connection.ts:13](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/connection.ts#L13)
+Defined in: [packages/ipc-server/src/connection.ts:13](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/connection.ts#L13)
 
 ***
 
@@ -196,13 +176,11 @@
 
 > **socket**: `undefined` \| `Socket`
 
+Defined in: [packages/ipc-server/src/base-connection.ts:68](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L68)
+
 #### Inherited from
 
 [`IPCBaseConnection`](IPCBaseConnection.md).[`socket`](IPCBaseConnection.md#socket)
-
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:68](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L68)
 
 ***
 
@@ -210,19 +188,19 @@
 
 > `static` **defaultMaxListeners**: `number`
 
+Defined in: node\_modules/.pnpm/events-ex@2.1.0/node\_modules/events-ex/lib/event-emitter.d.ts:7
+
 #### Inherited from
 
 [`IPCBaseConnection`](IPCBaseConnection.md).[`defaultMaxListeners`](IPCBaseConnection.md#defaultmaxlisteners)
-
-#### Defined in
-
-node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.ts:7
 
 ## Methods
 
 ### \_drain()
 
 > **\_drain**(): `void`
+
+Defined in: [packages/ipc-server/src/base-connection.ts:317](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L317)
 
 #### Returns
 
@@ -232,29 +210,25 @@ node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.
 
 [`IPCBaseConnection`](IPCBaseConnection.md).[`_drain`](IPCBaseConnection.md#_drain)
 
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:317](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L317)
-
 ***
 
 ### \_init()
 
 > **\_init**(): `void`
 
+Defined in: [packages/ipc-server/src/connection.ts:29](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/connection.ts#L29)
+
 #### Returns
 
 `void`
-
-#### Defined in
-
-[packages/ipc-server/src/connection.ts:29](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/connection.ts#L29)
 
 ***
 
 ### \_nonce()
 
 > **\_nonce**(): `string`
+
+Defined in: [packages/ipc-server/src/base-connection.ts:173](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L173)
 
 #### Returns
 
@@ -264,15 +238,13 @@ node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.
 
 [`IPCBaseConnection`](IPCBaseConnection.md).[`_nonce`](IPCBaseConnection.md#_nonce)
 
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:173](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L173)
-
 ***
 
 ### \_onClose()
 
 > **\_onClose**(): `void`
+
+Defined in: [packages/ipc-server/src/connection.ts:80](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/connection.ts#L80)
 
 #### Returns
 
@@ -282,49 +254,45 @@ node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.
 
 [`IPCBaseConnection`](IPCBaseConnection.md).[`_onClose`](IPCBaseConnection.md#_onclose)
 
-#### Defined in
-
-[packages/ipc-server/src/connection.ts:80](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/connection.ts#L80)
-
 ***
 
 ### \_onError()
 
 > **\_onError**(`e`): `void`
 
+Defined in: [packages/ipc-server/src/connection.ts:71](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/connection.ts#L71)
+
 #### Parameters
 
-• **e**: `Error`
+##### e
+
+`Error`
 
 #### Returns
 
 `void`
 
-#### Defined in
-
-[packages/ipc-server/src/connection.ts:71](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/connection.ts#L71)
-
 ***
 
 ### \_pack()
 
-> **\_pack**(`packetData`): `Buffer`
+> **\_pack**(`packetData`): `Buffer`\<`ArrayBuffer`\>
+
+Defined in: [packages/ipc-server/src/base-connection.ts:275](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L275)
 
 #### Parameters
 
-• **packetData**: [`IPCPacketType`](../interfaces/IPCPacketType.md)
+##### packetData
+
+[`IPCPacketType`](../interfaces/IPCPacketType.md)
 
 #### Returns
 
-`Buffer`
+`Buffer`\<`ArrayBuffer`\>
 
 #### Inherited from
 
 [`IPCBaseConnection`](IPCBaseConnection.md).[`_pack`](IPCBaseConnection.md#_pack)
-
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:275](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L275)
 
 ***
 
@@ -332,9 +300,13 @@ node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.
 
 > **\_parse**(`data`): `void`
 
+Defined in: [packages/ipc-server/src/connection.ts:91](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/connection.ts#L91)
+
 #### Parameters
 
-• **data**: [`IPCPacketType`](../interfaces/IPCPacketType.md)
+##### data
+
+[`IPCPacketType`](../interfaces/IPCPacketType.md)
 
 #### Returns
 
@@ -344,19 +316,19 @@ node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.
 
 [`IPCBaseConnection`](IPCBaseConnection.md).[`_parse`](IPCBaseConnection.md#_parse)
 
-#### Defined in
-
-[packages/ipc-server/src/connection.ts:91](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/connection.ts#L91)
-
 ***
 
 ### \_processBuffer()
 
 > **\_processBuffer**(`socket`): `void`
 
+Defined in: [packages/ipc-server/src/base-connection.ts:195](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L195)
+
 #### Parameters
 
-• **socket**: `Socket` = `...`
+##### socket
+
+`Socket` = `...`
 
 #### Returns
 
@@ -366,15 +338,13 @@ node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.
 
 [`IPCBaseConnection`](IPCBaseConnection.md).[`_processBuffer`](IPCBaseConnection.md#_processbuffer)
 
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:195](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L195)
-
 ***
 
 ### \_read()
 
 > **\_read**(): `void`
+
+Defined in: [packages/ipc-server/src/base-connection.ts:187](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L187)
 
 #### Returns
 
@@ -384,31 +354,27 @@ node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.
 
 [`IPCBaseConnection`](IPCBaseConnection.md).[`_read`](IPCBaseConnection.md#_read)
 
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:187](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L187)
-
 ***
 
 ### \_readFromBuffer()
 
-> **\_readFromBuffer**(`length`): `undefined` \| `Buffer`
+> **\_readFromBuffer**(`length`): `undefined` \| `Buffer`\<`ArrayBufferLike`\>
+
+Defined in: [packages/ipc-server/src/base-connection.ts:212](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L212)
 
 #### Parameters
 
-• **length**: `number`
+##### length
+
+`number`
 
 #### Returns
 
-`undefined` \| `Buffer`
+`undefined` \| `Buffer`\<`ArrayBufferLike`\>
 
 #### Inherited from
 
 [`IPCBaseConnection`](IPCBaseConnection.md).[`_readFromBuffer`](IPCBaseConnection.md#_readfrombuffer)
-
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:212](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L212)
 
 ***
 
@@ -416,9 +382,13 @@ node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.
 
 > **\_readToBuffer**(`socket`): `void`
 
+Defined in: [packages/ipc-server/src/base-connection.ts:177](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L177)
+
 #### Parameters
 
-• **socket**: `Socket` = `...`
+##### socket
+
+`Socket` = `...`
 
 #### Returns
 
@@ -428,19 +398,19 @@ node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.
 
 [`IPCBaseConnection`](IPCBaseConnection.md).[`_readToBuffer`](IPCBaseConnection.md#_readtobuffer)
 
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:177](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L177)
-
 ***
 
 ### \_tag()
 
 > **\_tag**(`_size`): `number`[]
 
+Defined in: [packages/ipc-server/src/base-connection.ts:285](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L285)
+
 #### Parameters
 
-• **\_size**: `number`
+##### \_size
+
+`number`
 
 #### Returns
 
@@ -450,25 +420,31 @@ node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.
 
 [`IPCBaseConnection`](IPCBaseConnection.md).[`_tag`](IPCBaseConnection.md#_tag)
 
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:285](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L285)
-
 ***
 
 ### \_tryWrite()
 
 > **\_tryWrite**(`op`, `data`?, `nonce`?, `retries`?): `Promise`\<`undefined` \| `boolean` \| `Error`\>
 
+Defined in: [packages/ipc-server/src/connection.ts:155](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/connection.ts#L155)
+
 #### Parameters
 
-• **op**: [`IPCMessageType`](../enumerations/IPCMessageType.md)
+##### op
 
-• **data?**: `any`
+[`IPCMessageType`](../enumerations/IPCMessageType.md)
 
-• **nonce?**: `string`
+##### data?
 
-• **retries?**: `number` = `0`
+`any`
+
+##### nonce?
+
+`string`
+
+##### retries?
+
+`number` = `0`
 
 #### Returns
 
@@ -478,23 +454,27 @@ node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.
 
 [`IPCBaseConnection`](IPCBaseConnection.md).[`_tryWrite`](IPCBaseConnection.md#_trywrite)
 
-#### Defined in
-
-[packages/ipc-server/src/connection.ts:155](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/connection.ts#L155)
-
 ***
 
 ### \_write()
 
 > **\_write**(`op`, `data`?, `nonce`?): `PromiseEx`\<`any`\> \| `Promise`\<`true`\>
 
+Defined in: [packages/ipc-server/src/base-connection.ts:245](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L245)
+
 #### Parameters
 
-• **op**: [`IPCMessageType`](../enumerations/IPCMessageType.md)
+##### op
 
-• **data?**: `any`
+[`IPCMessageType`](../enumerations/IPCMessageType.md)
 
-• **nonce?**: `string`
+##### data?
+
+`any`
+
+##### nonce?
+
+`string`
 
 #### Returns
 
@@ -504,21 +484,23 @@ node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.
 
 [`IPCBaseConnection`](IPCBaseConnection.md).[`_write`](IPCBaseConnection.md#_write)
 
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:245](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L245)
-
 ***
 
 ### close()
 
 > **close**(`data`?, `allowReconnect`?): `Promise`\<`boolean`\>
 
+Defined in: [packages/ipc-server/src/base-connection.ts:130](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L130)
+
 #### Parameters
 
-• **data?**: `any`
+##### data?
 
-• **allowReconnect?**: `boolean` = `false`
+`any`
+
+##### allowReconnect?
+
+`boolean` = `false`
 
 #### Returns
 
@@ -528,19 +510,19 @@ node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.
 
 [`IPCBaseConnection`](IPCBaseConnection.md).[`close`](IPCBaseConnection.md#close)
 
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:130](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L130)
-
 ***
 
 ### destroy()
 
 > **destroy**(`reason`?): `boolean`
 
+Defined in: [packages/ipc-server/src/base-connection.ts:149](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L149)
+
 #### Parameters
 
-• **reason?**: `string` \| `Error`
+##### reason?
+
+`string` | `Error`
 
 #### Returns
 
@@ -550,23 +532,25 @@ node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.
 
 [`IPCBaseConnection`](IPCBaseConnection.md).[`destroy`](IPCBaseConnection.md#destroy)
 
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:149](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L149)
-
 ***
 
 ### emit()
 
 > **emit**(`eventName`, ...`args`): `any`
 
+Defined in: node\_modules/.pnpm/events-ex@2.1.0/node\_modules/events-ex/lib/event-emitter.d.ts:38
+
 Emits the specified event type with the given arguments.
 
 #### Parameters
 
-• **eventName**: `string`
+##### eventName
 
-• ...**args**: `any`[]
+`string`
+
+##### args
+
+...`any`[]
 
 The event type followed by any number of arguments to be passed to the listener functions.
 
@@ -580,23 +564,25 @@ The result of the event.
 
 [`IPCBaseConnection`](IPCBaseConnection.md).[`emit`](IPCBaseConnection.md#emit)
 
-#### Defined in
-
-node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.ts:38
-
 ***
 
 ### emitAsync()
 
 > **emitAsync**(`eventName`, ...`args`): `Promise`\<`any`\>
 
+Defined in: node\_modules/.pnpm/events-ex@2.1.0/node\_modules/events-ex/lib/event-emitter.d.ts:44
+
 Asynchronously emits the specified event type with the given arguments.
 
 #### Parameters
 
-• **eventName**: `string`
+##### eventName
 
-• ...**args**: `any`[]
+`string`
+
+##### args
+
+...`any`[]
 
 The event type followed by any number of arguments to be passed to the listener functions.
 
@@ -610,23 +596,23 @@ A promise that resolves with the result of the event.
 
 [`IPCBaseConnection`](IPCBaseConnection.md).[`emitAsync`](IPCBaseConnection.md#emitasync)
 
-#### Defined in
-
-node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.ts:44
-
 ***
 
 ### listenerCount()
 
 > **listenerCount**(`eventName`): `number`
 
+Defined in: node\_modules/.pnpm/events-ex@2.1.0/node\_modules/events-ex/lib/event-emitter.d.ts:66
+
 Returns the count of listeners that are registered to listen for the specified event.
 
 #### Parameters
 
-• **eventName**: `string` \| `RegExp`
+##### eventName
 
 The name of the event to get the listeners for.
+
+`string` | `RegExp`
 
 #### Returns
 
@@ -638,23 +624,23 @@ The name of the event to get the listeners for.
 
 [`IPCBaseConnection`](IPCBaseConnection.md).[`listenerCount`](IPCBaseConnection.md#listenercount)
 
-#### Defined in
-
-node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.ts:66
-
 ***
 
 ### listeners()
 
 > **listeners**(`eventName`): `Function`[]
 
+Defined in: node\_modules/.pnpm/events-ex@2.1.0/node\_modules/events-ex/lib/event-emitter.d.ts:59
+
 Returns an array of functions that are registered to listen for the specified event.
 
 #### Parameters
 
-• **eventName**: `string` \| `RegExp`
+##### eventName
 
 The name of the event to get the listeners for.
+
+`string` | `RegExp`
 
 #### Returns
 
@@ -666,23 +652,25 @@ The name of the event to get the listeners for.
 
 [`IPCBaseConnection`](IPCBaseConnection.md).[`listeners`](IPCBaseConnection.md#listeners)
 
-#### Defined in
-
-node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.ts:59
-
 ***
 
 ### off()
 
 > **off**(`eventName`, `listener`): `EventEmitter`
 
+Defined in: node\_modules/.pnpm/events-ex@2.1.0/node\_modules/events-ex/lib/event-emitter.d.ts:32
+
 Removes a listener function from the specified event type.
 
 #### Parameters
 
-• **eventName**: `string` \| `RegExp`
+##### eventName
 
-• **listener**: `Function`
+`string` | `RegExp`
+
+##### listener
+
+`Function`
 
 The listener function to be removed.
 
@@ -700,23 +688,25 @@ If the listener is not a function.
 
 [`IPCBaseConnection`](IPCBaseConnection.md).[`off`](IPCBaseConnection.md#off)
 
-#### Defined in
-
-node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.ts:32
-
 ***
 
 ### on()
 
 > **on**(`eventName`, `listener`): `EventEmitter`
 
+Defined in: node\_modules/.pnpm/events-ex@2.1.0/node\_modules/events-ex/lib/event-emitter.d.ts:16
+
 Adds a listener function to the specified event type.
 
 #### Parameters
 
-• **eventName**: `string` \| `RegExp`
+##### eventName
 
-• **listener**: `Function`
+`string` | `RegExp`
+
+##### listener
+
+`Function`
 
 The listener function to be called when the event is emitted.
 
@@ -734,23 +724,25 @@ If the listener is not a function.
 
 [`IPCBaseConnection`](IPCBaseConnection.md).[`on`](IPCBaseConnection.md#on)
 
-#### Defined in
-
-node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.ts:16
-
 ***
 
 ### once()
 
 > **once**(`eventName`, `listener`): `EventEmitter`
 
+Defined in: node\_modules/.pnpm/events-ex@2.1.0/node\_modules/events-ex/lib/event-emitter.d.ts:24
+
 Adds a one-time listener function to the specified event type.
 
 #### Parameters
 
-• **eventName**: `string` \| `RegExp`
+##### eventName
 
-• **listener**: `Function`
+`string` | `RegExp`
+
+##### listener
+
+`Function`
 
 The listener function to be called once when the event is emitted.
 
@@ -768,23 +760,17 @@ If the listener is not a function.
 
 [`IPCBaseConnection`](IPCBaseConnection.md).[`once`](IPCBaseConnection.md#once)
 
-#### Defined in
-
-node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.ts:24
-
 ***
 
 ### pause()
 
 > **pause**(): `void`
 
+Defined in: [packages/ipc-server/src/connection.ts:23](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/connection.ts#L23)
+
 #### Returns
 
 `void`
-
-#### Defined in
-
-[packages/ipc-server/src/connection.ts:23](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/connection.ts#L23)
 
 ***
 
@@ -792,11 +778,17 @@ node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.
 
 > **ping**(`data`?, `timeout`?): `Promise`\<`unknown`\>
 
+Defined in: [packages/ipc-server/src/base-connection.ts:126](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L126)
+
 #### Parameters
 
-• **data?**: `any`
+##### data?
 
-• **timeout?**: `number` = `DEFAULT_TIMEOUT`
+`any`
+
+##### timeout?
+
+`number` = `DEFAULT_TIMEOUT`
 
 #### Returns
 
@@ -806,23 +798,27 @@ node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.
 
 [`IPCBaseConnection`](IPCBaseConnection.md).[`ping`](IPCBaseConnection.md#ping)
 
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:126](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L126)
-
 ***
 
 ### publish()
 
 > **publish**(`event`, `message`, `timeout`): `Promise`\<`boolean`\>
 
+Defined in: [packages/ipc-server/src/base-connection.ts:114](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L114)
+
 #### Parameters
 
-• **event**: `string`
+##### event
 
-• **message**: `any`
+`string`
 
-• **timeout**: `number` = `DEFAULT_TIMEOUT`
+##### message
+
+`any`
+
+##### timeout
+
+`number` = `DEFAULT_TIMEOUT`
 
 #### Returns
 
@@ -832,31 +828,27 @@ node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.
 
 [`IPCBaseConnection`](IPCBaseConnection.md).[`publish`](IPCBaseConnection.md#publish)
 
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:114](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L114)
-
 ***
 
 ### readBuffer()
 
-> **readBuffer**(`size`?): `undefined` \| `Buffer`
+> **readBuffer**(`size`?): `undefined` \| `Buffer`\<`ArrayBufferLike`\>
+
+Defined in: [packages/ipc-server/src/base-connection.ts:237](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L237)
 
 #### Parameters
 
-• **size?**: `number`
+##### size?
+
+`number`
 
 #### Returns
 
-`undefined` \| `Buffer`
+`undefined` \| `Buffer`\<`ArrayBufferLike`\>
 
 #### Inherited from
 
 [`IPCBaseConnection`](IPCBaseConnection.md).[`readBuffer`](IPCBaseConnection.md#readbuffer)
-
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:237](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L237)
 
 ***
 
@@ -864,13 +856,17 @@ node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.
 
 > **removeAllListeners**(`eventName`?): `EventEmitter`
 
+Defined in: node\_modules/.pnpm/events-ex@2.1.0/node\_modules/events-ex/lib/event-emitter.d.ts:51
+
 Removes all listeners for a specific event or all events from an event emitter.
 
 #### Parameters
 
-• **eventName?**: `string` \| `RegExp`
+##### eventName?
 
 The event to remove listeners for. If not provided, all listeners for all events will be removed.
+
+`string` | `RegExp`
 
 #### Returns
 
@@ -882,21 +878,23 @@ The event to remove listeners for. If not provided, all listeners for all events
 
 [`IPCBaseConnection`](IPCBaseConnection.md).[`removeAllListeners`](IPCBaseConnection.md#removealllisteners)
 
-#### Defined in
-
-node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.ts:51
-
 ***
 
 ### request()
 
 > **request**(`data`?, `timeout`?): `Promise`\<`unknown`\>
 
+Defined in: [packages/ipc-server/src/base-connection.ts:110](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L110)
+
 #### Parameters
 
-• **data?**: `any`
+##### data?
 
-• **timeout?**: `number` = `DEFAULT_TIMEOUT`
+`any`
+
+##### timeout?
+
+`number` = `DEFAULT_TIMEOUT`
 
 #### Returns
 
@@ -906,23 +904,17 @@ node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.
 
 [`IPCBaseConnection`](IPCBaseConnection.md).[`request`](IPCBaseConnection.md#request)
 
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:110](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L110)
-
 ***
 
 ### resume()
 
 > **resume**(): `void`
 
+Defined in: [packages/ipc-server/src/connection.ts:26](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/connection.ts#L26)
+
 #### Returns
 
 `void`
-
-#### Defined in
-
-[packages/ipc-server/src/connection.ts:26](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/connection.ts#L26)
 
 ***
 
@@ -930,9 +922,13 @@ node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.
 
 > **send**(`data`): `Promise`\<`void` \| `Boolean` \| `Error`\>
 
+Defined in: [packages/ipc-server/src/base-connection.ts:82](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L82)
+
 #### Parameters
 
-• **data**: `any`
+##### data
+
+`any`
 
 #### Returns
 
@@ -942,23 +938,27 @@ node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.
 
 [`IPCBaseConnection`](IPCBaseConnection.md).[`send`](IPCBaseConnection.md#send)
 
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:82](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L82)
-
 ***
 
 ### sendByType()
 
 > **sendByType**(`op`, `data`?, `timeout`?): `Promise`\<`unknown`\>
 
+Defined in: [packages/ipc-server/src/base-connection.ts:86](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L86)
+
 #### Parameters
 
-• **op**: [`IPCMessageType`](../enumerations/IPCMessageType.md)
+##### op
 
-• **data?**: `any`
+[`IPCMessageType`](../enumerations/IPCMessageType.md)
 
-• **timeout?**: `number` = `DEFAULT_TIMEOUT`
+##### data?
+
+`any`
+
+##### timeout?
+
+`number` = `DEFAULT_TIMEOUT`
 
 #### Returns
 
@@ -968,19 +968,19 @@ node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.
 
 [`IPCBaseConnection`](IPCBaseConnection.md).[`sendByType`](IPCBaseConnection.md#sendbytype)
 
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:86](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L86)
-
 ***
 
 ### setMaxListeners()
 
 > **setMaxListeners**(`n`): `EventEmitter`
 
+Defined in: node\_modules/.pnpm/events-ex@2.1.0/node\_modules/events-ex/lib/event-emitter.d.ts:52
+
 #### Parameters
 
-• **n**: `number`
+##### n
+
+`number`
 
 #### Returns
 
@@ -990,21 +990,23 @@ node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.
 
 [`IPCBaseConnection`](IPCBaseConnection.md).[`setMaxListeners`](IPCBaseConnection.md#setmaxlisteners)
 
-#### Defined in
-
-node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.ts:52
-
 ***
 
 ### subscribe()
 
 > **subscribe**(`event`, `timeout`): `Promise`\<`boolean`\>
 
+Defined in: [packages/ipc-server/src/base-connection.ts:118](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L118)
+
 #### Parameters
 
-• **event**: `string` \| `string`[]
+##### event
 
-• **timeout**: `number` = `DEFAULT_TIMEOUT`
+`string` | `string`[]
+
+##### timeout
+
+`number` = `DEFAULT_TIMEOUT`
 
 #### Returns
 
@@ -1014,21 +1016,23 @@ node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.
 
 [`IPCBaseConnection`](IPCBaseConnection.md).[`subscribe`](IPCBaseConnection.md#subscribe)
 
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:118](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L118)
-
 ***
 
 ### unsubscribe()
 
 > **unsubscribe**(`event`, `timeout`): `Promise`\<`boolean`\>
 
+Defined in: [packages/ipc-server/src/base-connection.ts:122](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/base-connection.ts#L122)
+
 #### Parameters
 
-• **event**: `string` \| `string`[]
+##### event
 
-• **timeout**: `number` = `DEFAULT_TIMEOUT`
+`string` | `string`[]
+
+##### timeout
+
+`number` = `DEFAULT_TIMEOUT`
 
 #### Returns
 
@@ -1038,23 +1042,25 @@ node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.
 
 [`IPCBaseConnection`](IPCBaseConnection.md).[`unsubscribe`](IPCBaseConnection.md#unsubscribe)
 
-#### Defined in
-
-[packages/ipc-server/src/base-connection.ts:122](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/base-connection.ts#L122)
-
 ***
 
 ### ~~listenerCount()~~
 
 > `static` **listenerCount**(`emitter`, `eventName`): `number`
 
+Defined in: node\_modules/.pnpm/events-ex@2.1.0/node\_modules/events-ex/lib/event-emitter.d.ts:74
+
 Returns the count of listeners that are registered to listen for the specified event.
 
 #### Parameters
 
-• **emitter**: `EventEmitter`
+##### emitter
 
-• **eventName**: `string` \| `RegExp`
+`EventEmitter`
+
+##### eventName
+
+`string` | `RegExp`
 
 #### Returns
 
@@ -1066,8 +1072,4 @@ use emitter.listenerCount instead
 
 #### Inherited from
 
-[`IPCBaseConnection`](IPCBaseConnection.md).[`listenerCount`](IPCBaseConnection.md#listenercount-1)
-
-#### Defined in
-
-node\_modules/.pnpm/events-ex@2.0.0/node\_modules/events-ex/lib/event-emitter.d.ts:74
+[`IPCBaseConnection`](IPCBaseConnection.md).[`listenerCount`](IPCBaseConnection.md#listenercount-2)

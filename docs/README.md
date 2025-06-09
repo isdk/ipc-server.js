@@ -1,4 +1,4 @@
-**@isdk/ipc-server** • [**Docs**](globals.md)
+**@isdk/ipc-server**
 
 ***
 

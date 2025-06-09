@@ -1,4 +1,4 @@
-[**@isdk/ipc-server**](../README.md) • **Docs**
+[**@isdk/ipc-server**](../README.md)
 
 ***
 
@@ -6,13 +6,15 @@
 
 # Interface: IPCClientOptions
 
+Defined in: [packages/ipc-server/src/client.ts:13](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/client.ts#L13)
+
 ## Extends
 
 - `IpcNetConnectOpts`
 
 ## Indexable
 
- \[`name`: `string`\]: `any`
+\[`name`: `string`\]: `any`
 
 ## Properties
 
@@ -20,13 +22,11 @@
 
 > `optional` **allowHalfOpen**: `boolean`
 
+Defined in: node\_modules/.pnpm/@types+node@22.13.10/node\_modules/@types/node/net.d.ts:31
+
 #### Inherited from
 
 `IpcNetConnectOpts.allowHalfOpen`
-
-#### Defined in
-
-node\_modules/.pnpm/@types+node@20.16.12/node\_modules/@types/node/net.d.ts:31
 
 ***
 
@@ -34,13 +34,11 @@ node\_modules/.pnpm/@types+node@20.16.12/node\_modules/@types/node/net.d.ts:31
 
 > `optional` **fd**: `number`
 
+Defined in: node\_modules/.pnpm/@types+node@22.13.10/node\_modules/@types/node/net.d.ts:30
+
 #### Inherited from
 
 `IpcNetConnectOpts.fd`
-
-#### Defined in
-
-node\_modules/.pnpm/@types+node@20.16.12/node\_modules/@types/node/net.d.ts:30
 
 ***
 
@@ -48,9 +46,7 @@ node\_modules/.pnpm/@types+node@20.16.12/node\_modules/@types/node/net.d.ts:30
 
 > `optional` **handshake**: `boolean`
 
-#### Defined in
-
-[packages/ipc-server/src/client.ts:16](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/client.ts#L16)
+Defined in: [packages/ipc-server/src/client.ts:16](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/client.ts#L16)
 
 ***
 
@@ -58,9 +54,7 @@ node\_modules/.pnpm/@types+node@20.16.12/node\_modules/@types/node/net.d.ts:30
 
 > `optional` **maxRetryTime**: `number`
 
-#### Defined in
-
-[packages/ipc-server/src/client.ts:19](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/client.ts#L19)
+Defined in: [packages/ipc-server/src/client.ts:19](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/client.ts#L19)
 
 ***
 
@@ -68,17 +62,11 @@ node\_modules/.pnpm/@types+node@20.16.12/node\_modules/@types/node/net.d.ts:30
 
 > `optional` **onread**: `OnReadOpts`
 
-If specified, incoming data is stored in a single buffer and passed to the supplied callback when data arrives on the socket.
-Note: this will cause the streaming functionality to not provide any data, however events like 'error', 'end', and 'close' will
-still be emitted as normal and methods like pause() and resume() will also behave as expected.
+Defined in: node\_modules/.pnpm/@types+node@22.13.10/node\_modules/@types/node/net.d.ts:32
 
 #### Inherited from
 
 `IpcNetConnectOpts.onread`
-
-#### Defined in
-
-node\_modules/.pnpm/@types+node@20.16.12/node\_modules/@types/node/net.d.ts:51
 
 ***
 
@@ -86,13 +74,11 @@ node\_modules/.pnpm/@types+node@20.16.12/node\_modules/@types/node/net.d.ts:51
 
 > **path**: `string`
 
+Defined in: [packages/ipc-server/src/client.ts:15](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/client.ts#L15)
+
 #### Overrides
 
 `IpcNetConnectOpts.path`
-
-#### Defined in
-
-[packages/ipc-server/src/client.ts:15](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/client.ts#L15)
 
 ***
 
@@ -100,13 +86,11 @@ node\_modules/.pnpm/@types+node@20.16.12/node\_modules/@types/node/net.d.ts:51
 
 > `optional` **readable**: `boolean`
 
+Defined in: node\_modules/.pnpm/@types+node@22.13.10/node\_modules/@types/node/net.d.ts:33
+
 #### Inherited from
 
 `IpcNetConnectOpts.readable`
-
-#### Defined in
-
-node\_modules/.pnpm/@types+node@20.16.12/node\_modules/@types/node/net.d.ts:32
 
 ***
 
@@ -114,9 +98,7 @@ node\_modules/.pnpm/@types+node@20.16.12/node\_modules/@types/node/net.d.ts:32
 
 > `optional` **reconnect**: `boolean`
 
-#### Defined in
-
-[packages/ipc-server/src/client.ts:17](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/client.ts#L17)
+Defined in: [packages/ipc-server/src/client.ts:17](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/client.ts#L17)
 
 ***
 
@@ -124,9 +106,7 @@ node\_modules/.pnpm/@types+node@20.16.12/node\_modules/@types/node/net.d.ts:32
 
 > `optional` **retries**: `number`
 
-#### Defined in
-
-[packages/ipc-server/src/client.ts:18](https://github.com/isdk/ipc-server.js/blob/64a46f715f59f19fdab332a9cff994e930e96d0d/src/client.ts#L18)
+Defined in: [packages/ipc-server/src/client.ts:18](https://github.com/isdk/ipc-server.js/blob/2f64abf9d868d3d65221954637804408e9f46984/src/client.ts#L18)
 
 ***
 
@@ -134,13 +114,11 @@ node\_modules/.pnpm/@types+node@20.16.12/node\_modules/@types/node/net.d.ts:32
 
 > `optional` **signal**: `AbortSignal`
 
+Defined in: node\_modules/.pnpm/@types+node@22.13.10/node\_modules/@types/node/net.d.ts:35
+
 #### Inherited from
 
 `IpcNetConnectOpts.signal`
-
-#### Defined in
-
-node\_modules/.pnpm/@types+node@20.16.12/node\_modules/@types/node/net.d.ts:34
 
 ***
 
@@ -148,13 +126,11 @@ node\_modules/.pnpm/@types+node@20.16.12/node\_modules/@types/node/net.d.ts:34
 
 > `optional` **timeout**: `number`
 
+Defined in: node\_modules/.pnpm/@types+node@22.13.10/node\_modules/@types/node/net.d.ts:810
+
 #### Inherited from
 
 `IpcNetConnectOpts.timeout`
-
-#### Defined in
-
-node\_modules/.pnpm/@types+node@20.16.12/node\_modules/@types/node/net.d.ts:797
 
 ***
 
@@ -162,10 +138,8 @@ node\_modules/.pnpm/@types+node@20.16.12/node\_modules/@types/node/net.d.ts:797
 
 > `optional` **writable**: `boolean`
 
+Defined in: node\_modules/.pnpm/@types+node@22.13.10/node\_modules/@types/node/net.d.ts:34
+
 #### Inherited from
 
 `IpcNetConnectOpts.writable`
-
-#### Defined in
-
-node\_modules/.pnpm/@types+node@20.16.12/node\_modules/@types/node/net.d.ts:33
